@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<!-- 
+	<bean id="connection_db" class="db.connection_db">
+		<property name="datasource">
+			<ref bean="OracleDataSource"/>
+		</property>
+	</bean>
+	 -->
+	
+	<bean id="testScope" class="TestScope.TestScope" scope="prototype">
+		<property name="test"><value>this is test</value></property>
+	</bean>
+	<!-- 瀹氢箟鏁版嵁婧?-->
+	<!-- 
+	<bean id="OracleDataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@127.0.0.1:1521:ORCL</value>
+		</property>
+		<property name="username">
+			<value>scott</value>
+		</property>
+		<property name="password">
+			<value>tiger</value>
+		</property>
+	</bean>
+	-->
+</beans>
