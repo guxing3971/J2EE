@@ -1,4 +1,5 @@
-@author:Neptune
-@Version:CentOS 6.5 JDK 1.7 Eclipse:Build id: 20130919-0819
+
+<h1>@Version:CentOS 6.5 </h1>
+<h1>@JDK 1.7  </h1>
 
 there are notes for java!
