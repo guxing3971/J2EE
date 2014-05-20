@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- 配置Spring数据源 Oracle10g -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
+		<property name="username" value="scott"></property>
+		<property name="password" value="tiger"></property>
+	</bean>
+	
+	<!-- 定义Hibernate的SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        
+        <!-- mappingResources属性用来列出全部映射文件 -->
+        <property name="mappingResources">
+            <list>
+                <!-- 以下用来列出所有的PO映射文件 -->
+                <value>conf/hbm/User.hbm.xml</value>
+            </list>
+        </property>
+         <!-- 定义Hibernate的SessionFactory属性 -->
+        <property name="hibernateProperties">
+             <props>
+                <!-- 指定Hibernate的连接方言 -->
+                <prop key="hibernate.dialect">
+                	org.hibernate.dialect.Oracle9Dialect
+                </prop>
+                <!-- 配置启动应用时，是否根据Hibernate映射自动创建数据表 -->
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+           </props>
+        </property>
+    </bean>
+	
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+  		<property name="sessionFactory" ref="sessionFactory"></property>
+ 	</bean>
+ 	
+ 	<!-- 配置一个Hibernate的通用操作bean -->
+ 	<bean id="userdao" class="spring3.db.userdao">
+ 		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+ 	</bean>
+</beans>

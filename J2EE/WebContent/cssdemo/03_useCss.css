@@ -1,0 +1,19 @@
+/*外部样式表*/
+h1{
+	font-size: 48px;
+	font-family: '雅黑';
+	color:#F00;
+	background: #CCFFCC;
+}
+h2{
+	font-size: 20px;
+	font-family: '雅黑';
+	color:#F00;
+	background: #C9C;
+}
+h3{
+	font-size: 12px;
+	font-family: '雅黑';
+	color:#F00;
+	background: #C3C;
+}

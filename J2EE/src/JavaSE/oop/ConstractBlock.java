@@ -1,7 +1,6 @@
 package JavaSE.oop;
 
 /**************************************************
- * @author Neptunes
  * @summary 演示类中构造块的定义 构造快在构造方法执行前调用
  *************************************************/
 @SuppressWarnings("unused")
@@ -12,7 +11,7 @@ public class ConstractBlock {
 	public String motto = null;
 	
 	{// 构造块定义
-		this.name ="Neptune";
+		this.name ="snake";
 		this.motto =" Open Your's idea";
 		System.out.println("Block.....");
 	}

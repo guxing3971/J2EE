@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+      Hibernate demo
+    </title>
+    <style type="text/css">
+
+      div#body{ margin-left:auto; margin-right:auto; text-align:center; } 
+      div#login{ width:300px; height:120px; margin-left:auto; margin-right:auto; padding-top:2px; border:1px solid #FFAA00; }
+    </style>
+  </head>
+  <body>
+    <div id="body">
+      <div id="login">
+      	Hibernate Add User Save DB
+      	<hr/>
+        <form action="/J2EE/strut1/hibrenate/user.do?method=AddUser" method="POST">
+          username:
+          <input type="text" name="username" value="" />
+          <br/>
+          password:
+          <input type="text" name="password" value="" />
+          <br/>
+          <input type="submit" name="submit" value="add user" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -4,7 +4,6 @@ import java.util.Date;
 
 /*****************************************************
  * 
- * @author Neptunes
  * @summary 演示通过实现Runnable接口实现多线程程序
  *****************************************************/
 public class ThreadByRunnable implements Runnable{

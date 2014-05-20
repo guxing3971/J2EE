@@ -1,7 +1,6 @@
 package JavaSE.oop.Interface;
 /******************************************
  * 
- * @author Neptunes
  * @summary 演示继承一个接口并实现相应的方法
  ******************************************/
 public class ExtendsInterface implements DefineInterface{

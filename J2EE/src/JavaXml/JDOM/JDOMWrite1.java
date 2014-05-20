@@ -33,7 +33,7 @@ public class JDOMWrite1 {
 		 //为节点设置内容
 		 name.setAttribute(id);
 		 name.setText("禅师");
-		 email.setText("snakeam@163.com");
+		 email.setText("snake@163.com");
 		 
 		 //设置节点关系
 		 Person.addContent(name);
@@ -48,7 +48,7 @@ public class JDOMWrite1 {
 		 //指定输出位置
 		 OutputStream file = null;
 		 try {
-			file = new FileOutputStream(new File("xml\\JDOMWrite.xml"));
+			file = new FileOutputStream(new File("src/JavaXml/xml/JDOMWrite.xml"));
 		 } catch (FileNotFoundException e) {
 			e.printStackTrace();
 		 }

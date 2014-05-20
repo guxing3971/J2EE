@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>演示JQuery的事件处理</title>
+<script src="/J2EE/libjs/jquery-1.10.2.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		//利用简单的函数绑定事件
+		$("p").click(function(){$(this).css("background-color","gray");});
+		//利用bind()的最简单形式绑定函数
+		$("h1").bind("click",function(event){console.log($(this).html()+event);});
+		//利用三个参数的bind()绑定事件，并为传递数据
+		$("h2").bind("click","this-data-for-tran",function(event){console.log(event.data);});
+		
+		//一次绑定多个事件
+		$("a").bind("mouseenter mouseleave",function(event){console.log("this's running...");});
+	};
+</script>
+</head>
+<p>this is p-tag</p>
+<img alt="ss" src="../image/460.gif">
+<h1>this is h1-tag</h1>
+<hr/>
+<h2>this is h2-tag</h2>
+<a href="#">this is link</a>
+
+</body>
+</html>

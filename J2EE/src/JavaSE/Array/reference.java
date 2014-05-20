@@ -1,7 +1,6 @@
 package JavaSE.Array;
 /*****************************************
  * 
- * @author Neptunes
  * @Summary: 演示Java数组的引用
  ****************************************/
 public class reference {

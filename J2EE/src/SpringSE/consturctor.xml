@@ -5,19 +5,19 @@
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	
 	
-	<bean id="person1" class="constructor.PersonService">
+	<bean id="person1" class="SpringSE.constructor.PersonService">
 	</bean>
 	
-	<bean id="person2" class="constructor.PersonService">
+	<bean id="person2" class="SpringSE.constructor.PersonService">
 		<constructor-arg>
-			<value>阃氲绷鏋勯€犲弬鏁颁紶阃掕幏鍙栧埌name</value>
+			<value>snake</value>
 		</constructor-arg>
 	</bean>
 	
-	<bean id="person3" class="constructor.PersonService">
-		<constructor-arg value="阃氲绷鏋勯€犳寚瀹氱殑鍚嶅瓧" type="java.lang.String" index="0"/>
+	<bean id="person3" class="SpringSE.constructor.PersonService">
+		<constructor-arg value="snake" type="java.lang.String" index="0"/>
 		<constructor-arg value="22" type="int"/>
-		<constructor-arg value="杩欐槸阃氲绷鏋勯€犲姞type鍜宨ndex璧嫔€肩殑" type="java.lang.String" index="1"/>
+		<constructor-arg value="snake" type="java.lang.String" index="1"/>
 	</bean>
 
 </beans>

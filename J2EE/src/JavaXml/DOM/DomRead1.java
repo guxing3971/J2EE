@@ -26,7 +26,7 @@ public class DomRead1 {
 		//获取Document对象
 		Document doc = null;
 		try {
-			doc = build.parse("xml\\demo1.xml");
+			doc = build.parse("src/JavaXml/xml/DomRead1.xml");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {

@@ -1,7 +1,6 @@
 package JavaSE.Array;
 
 /**************************************************
- * @author Neptune
  * @summary 演示Java中数组的定义已经初始化
  *************************************************/
 public class DefineAndInit {

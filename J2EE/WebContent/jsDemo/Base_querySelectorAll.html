@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>演示JavaScript中的queerySelectorAll和querySelect</title>
+<style type="text/css">
+.tit {
+	margin: auto;
+	width: 800px;
+	height: 200px;
+	border: 1px solid;
+	text-align: center;
+}
+.column {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	width: 400px;
+	height: 100px;
+	border: 2px solid #f00;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		//获取页面上所有的class=column的元素
+		var column = document.querySelectorAll("column");
+		//nodelist
+		console.log(column.constructor.name);
+	}
+</script>
+</head>
+<body>
+	<div class="tit">
+		CSS样式表有一种非常强大的语法，它有很多种选择器，它用来描述文档中的若干或多组元素。它可以通过ID，名字，标签名和类名等多种方式来描述文档中的元素。W3C提供了一个API用来以CSS选择器选取文档元素.该API为Document.querySelectorAll().它接受包含一个CSS选择器的字符串参数，返回一个表示文档中匹配选择器的所有元素的NodeList对象。
+		与前面的方法有所不同，querySelectorAll()返回的NodeList对象并不是实时的。它包含在调用时刻选择器所匹配的元素，但它并不更新后续文档的变化。如果没有匹配的元素。QuerySelectorAll()将返回一个空的NodeList对象。如果选择器字符串非法，querySelectorAll()将抛出一个异常。
+		除了querySelectorAll()文档对象还定义了querySelector()方法。与querySelectorAll()的工作原理类似，但它只是返回第一个匹配的元素，或者如果没有匹配到元素就返回空null。
+		这俩个方法在element节点上定义。在元素上调用时，指定的选择器仍然在整个文档准中进行匹配，然后过滤出结果集，以便它只包含指定元素的后元素。
+		Css定义的伪元素:first-line等和querySelectorAll()或querySelector()一起使用它们是不匹配的。</div>
+
+	<div class="column">栏目1</div>
+	<div class="column">栏目2</div>
+	<div class="column">栏目2</div>
+</body>
+</html>

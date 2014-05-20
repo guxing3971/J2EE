@@ -13,8 +13,8 @@ public class uploadfile {
 		int i = in.read();
 		while (i != -1) {
 			pw.print((char) i);
-			i = in.read();
+				i = in.read();
 			}
-		pw.close();
+			pw.close();
 		}
 }

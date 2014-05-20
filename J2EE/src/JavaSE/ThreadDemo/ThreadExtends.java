@@ -4,7 +4,6 @@ import java.util.Date;
 
 /*************************************************
  * 
- * @author Neptunes
  * @summary 演示以继承Thread方式实现多线程的例子
  *************************************************/
 public class ThreadExtends extends Thread{

@@ -22,7 +22,7 @@ public class DomRead2 {
 		Document doc =null;
 		
 			build = factory.newDocumentBuilder();
-			doc = build.parse("xml\\demo2.xml");
+			doc = build.parse("src/JavaXml/xml/DomRead2.xml");
 		
 		
 		//获得person列表

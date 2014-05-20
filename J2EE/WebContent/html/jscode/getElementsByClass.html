@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>演示getElementsByClassName</title>
+	<style type="text/css">
+		div{
+			text-align: center;
+			background: #AAAAAA;
+			margin-right: auto;
+			margin-left: auto;
+			width: 400px;
+			height: 40px;
+			border: 1px solid black;
+			vertical-align: middle;
+		}
+		.tilefont{
+			font-size: 30px;
+		}
+		.classname1{
+			background: #888888;
+		}
+		.classname2{
+			background: #666666;
+		}
+	</style>
+</head>
+<body>
+	<div class="tilefont">getElementsByClassName</div>
+	<HR>
+	<div class="classname1">
+		<div class="classname2">this is div</div>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+		var ele = document.getElementsByClassName("classname1");
+		//将会弹出classname1及classname2
+		alert(ele[0].outerHTML);
+	}
+</script>
+</html>

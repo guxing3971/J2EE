@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>JQuery Demo</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="demo.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			//用<i>元素包装所有h1元素
+			//产生 <i><h1>..</h1></i>
+			$("h1").wrap(document.createElement("i"));
+			//包装所有h1元素的内容,适用字符串参数更简单
+			//产生<h1><i>....</i></h1>
+			$("h1").wrapInner("<i/>");
+			//将第一个段落包装在一个锚点和div里
+			$("body>p:first").wrap("<a name='lead'><div class='first'></div></a>");
+			//将所有其他段落包装在另一个div里
+			$("body>p:not(:first)").warpAll("<div class='rest'></div>");
+		}
+	</script>
+</head>
+<body>
+	<a href="javascript:testeach1()">$.each demo1</a><br>
+	<a href="javascript:testeach2()">$.each demo2</a><br>
+	<div>
+		<h1>111111</h1>
+	</div>
+</body>
+</html>

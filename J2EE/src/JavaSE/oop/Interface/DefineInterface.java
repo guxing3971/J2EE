@@ -1,7 +1,5 @@
 package JavaSE.oop.Interface;
 /************************************
- * 
- * @author Neptune
  * @summary 演示如何定义一个接口
  ************************************/
 public interface DefineInterface {

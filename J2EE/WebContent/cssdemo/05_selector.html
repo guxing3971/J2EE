@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Css选择器</title>
+	<link rel="stylesheet" type="text/css" href="05_selector.css">
+	<style type="text/css">
+		/*对知识点的修饰*/
+		div#know{
+			margin: 0px;
+			padding: 0px;
+			border:1px solid;
+			border-redius:12px;
+		}
+		div>h1{
+			text-align: center;
+			font-size:20px;
+			color:#F00;
+		}
+		div>h3{
+			font-size:14px;
+			color:#F00;
+		}
+		pre>p{
+			font-size:14px;
+			color:#F00;
+		}
+	</style>
+</head>
+<body>
+	<div id="know">
+		<h1>CSS选择器</h1>
+		<hr/>
+<pre>
+<p>元素选择器</p>
+	元素选择器是最简单的选择器,其语法格式如下:
+	E {….}		E代表有效的HTML元素名,及标签名
+	下面是一些扩展使用格式
+	E[attr]{} 	指定该样式对具有某一属性的标签起作用
+	E[attr=value]{}	指定该样式对具有某一属性且其值为value的标签起作用
+	E[attr~=value]{} 	指定该样式对具有某一属性且其值能为空格隔开的系列中,其中某个值为value的标签起作用
+	E[attr|= value]{}	指定该样式对具有某一属性且其值能为空格隔开的系列中,其中第一个值为value的标签起作用
+	E[attr^=value]{}	指定该样式对具有某一属性,且其值是以value开头的标签起作用
+	E[att$="value"]{}	指定该样式对具有某一属性,且其值是以value结尾的标签起作用    
+	E[att*="value"]{}	指定该样式对具有某一属性,且其值包含value的标签起作用.
+<p>ID选择器</p>
+	ID选择器指定CSS样式将会对具有指定ID属性的标签起作用.ID选择器的语法格式如下:
+	#idValue{}
+	上面的额语法指定该css样式选择器对id为idvalue的标签起作用,各个浏览器对ID选择器的支持都很好.仅对指定元素起作用的ID选择器
+	E#idvalue {}
+		
+<p>CLASS选择器</p>
+	class选择器指定css样式对具有指定class属性的元素起作用,class选择器的语法格式为:
+ 	[E].classValue {}            /*其中E是有效的HTML标签*/
+<p>包含选择器</p>
+	包选择器用于指定目标选择器必须处于某个选择器对应的元素内部.其语法格式为:
+	selector1 selector2 {   }  /*selector1,selector2 都是有效的选择器*/
+<p>子选择器</p>
+	子选择器用于指定目标选择器必须是某个选择器对应的元素的子元素.其语法格式为,
+	包含选择器与子选择器有点类似.它们之间的区别在于:对于包含选择器,只要目标选择器位于外部选择器对应的元素内部,即使是 孙子元素都可以.
+	对于子选择器目标必须为直接子元素才行.
+	SELECTOR1>SELECTOR2 {....}   /* 其中selector1 和 selector2 都是有效的选择器*/
+<p>兄弟选择器</p>
+	兄弟选择器语法如下:
+	兄弟选择器匹配与selector1对于的元素后面,能匹配的seletor2的兄弟节点.
+	selector ~ selector2 {....}
+<p>选择器组合</p>
+	组合选择器.有时想让一个css样式对多个选择器起作用,那么就可以利用选择组合器来实现
+    selector1,selector2,selecotr3{  }
+<p>结构性伪选择器</p>
+   	 结构性伪类选择器指的是根据HTML元素之间的结构关键进行筛选的伪类选择器,结构性伪类选择器有下面几个:
+    SELECTOR:root            匹配文档的根元素,
+    selector:first-child     匹配符合selector选择器,而且必须是其父元素的第一个子节点元素
+    selector:last-child      匹配符合selector选择器,而且必须是其父元素的最后一个子节点元素
+    selector:nth-child(n)    匹配符合selector选择器,而且必须是其父元素的第n个子节点元素
+    seletor:nth-last-child(n) 匹配符合seletor选择器,而且必须是其父元素的倒数第n个子节点元素
+    seletor:only-child       匹配符合seletor选择器,而且必须是其父元素的唯一子节点
+    seleotr:first-of-type    匹配符合seleotr选择器,而且是与它同类型,同级的兄弟第一个元素
+    seletor:last-of-type     匹配符合seletor选择器,而且是与它同类型,同级的兄弟最后一个元素
+    seletor:nth-of-type(n)   匹配符合seletor选择器,而且是与它同类型,第n个兄弟节点
+    seletor:nth-last-of-type(n) 匹配符合seleotr选择器,而且是与它同类型,倒数第n个兄弟节点
+    seletor:only-of-type        匹配符合seleotr选择器,而且是与它同类型的唯一兄弟节点
+    seleotr:empty               匹配符合seletor选择器,而且其内部没有任何子元素
+<p>UI元素状态伪类选择器</p>
+    UI元素状态伪类选择器主要用于根据UI元素的状态进行筛选,主要有如下几个:
+    seletor:link                匹配seletor选择器且未被访问过的元素.
+    seletor:visited             匹配seletor选择器且以被访问过的元素
+    seletor:active              匹配seletor选择器且处于被用户激活状态
+    seleotr:hover               匹配seletor选择器且处于鼠标悬停状态的元素
+    seletor:focus               匹配seletor选择器且已得到焦点的元素
+    seletor:enabled             匹配seletor选择器且当前处于可用状态的元素
+    seleotr:disabled            匹配seletor选择器且当前处于不可用状态的元素
+    seleotr:checked             匹配seletor选择器且当前处于选中状态的元素
+    seletor:default             匹配seletor选择器且页面打开处于选中状态
+    seletor:read-only           匹配seletor选择器且当前处于只读状态的元素
+    seletor:read-write          匹配seletor选择器且当前处于读写状态的元素
+    seletor:selection           匹配selector选择器的元素中当前被选中的内容
+<p>伪元素选择器</p>
+	伪元素选择器并不是针对真正的元素使用的选择器,伪元素选择器只能针对css中的伪元素起作用.
+	css提供的伪元素选择器有如下几个:
+    :first-letter :该选择器对应的css样式对指定对象的第一个字符起作用
+    :first-line    该选择器对应的css样式对指定对象的第一行内容起作用
+    :before        该选择器与内容相关的属性结合起来,用于在指定对象内部的前端插入内容
+	:after         该选择器与内容相关的属性结合起来,用于在指定对象的尾部插入内容.
+</pre>	
+	</div>
+	<div id="demo">
+		<div id="elementSeletor">
+			<h3>元素选择器</h3>
+			<p>aa</p>
+			<p id="1">bb</p>
+			<p style="font-size:20px;">cc</p>
+			<p class="element">dd</p>
+		</div>
+	
+		<div id="idSelector">
+			<h3>ID选择器</h3>
+		</div>
+		
+		<div id="classSelector" class="classSelector">
+			<h3>Class选择器</h3>
+		</div>
+		
+		<div id="containSelector" class="containSelector">
+			<h3>包含选择器</h3>
+			<p id="groupSelector1" >直接子元素</p>
+			<div><p>孙子子元素</p></div>
+			<p class="groupSelector1">直接子元素</p>
+			<p>直接子元素</p>
+		</div>
+
+		<div id="childSelector" class="childSelector">
+			<h3>子选择器</h3>
+			<p id="groupSelector1" >直接子元素</p>
+			<div><p>孙子子元素</p></div>
+			<p class="groupSelector1">直接子元素</p>
+			<p>直接子元素</p>
+		</div>
+		<div id="brotherSelector" class="brotherSelector">
+			<h3>兄弟选择器</h3>
+			<p>第一个p</p>
+			<h3>兄弟选择器</h3>
+			<p>第一个p</p>
+			<p>第二个p</p>
+			<h3>兄弟选择器</h3>
+			<p>第一个p</p>
+			<p>第二个p</p>
+			<p>第二个p</p>
+			<h3>兄弟选择器</h3>
+			<p>第一个p</p>
+			<div><p>第二个p</p></div>
+			<p>第二个p</p>
+		</div>
+		<div id="groupSelector" class="groupSelector">
+			<h3>组合选择器</h3>
+			<p id="groupSelector1">组合1</p>
+			<p id="groupSelector2">组合1</p>
+			<p id="groupSelector3">组合1</p>
+		</div>
+
+		<div id="structPseudo" class="structPseudo">
+			<h3>结构性伪选择器</h3>
+			<div class="Pseudo">
+				<p>第一个p</p>
+				<p>第二个p</p>
+				<p>第三个p</p>
+				<p>第四个p</p>
+				<p>第五个p</p>
+			</div>
+		</div>
+
+		<div id="uiselector" class="uiselect">
+			<h3>UI元素状态伪类选择器</h3>
+			<a href="#">这是一个连接</a>
+			input:<input type="text" value="">
+			<div><p id="ui">11111111</p></div>
+		</div>
+	</div>
+</body>
+</html>

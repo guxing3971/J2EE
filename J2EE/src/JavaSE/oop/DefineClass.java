@@ -1,7 +1,6 @@
 package JavaSE.oop;
 /******************************************
  * 
- * @author Neptunes
  * @summary 演示如何定义一个类
  */
 
@@ -20,7 +19,7 @@ public class DefineClass {
 
 	public static void main(String[] args){
 		Person man = new Person();
-		man.name="neptune";
+		man.name="snake";
 		man.say();
 	}
 	

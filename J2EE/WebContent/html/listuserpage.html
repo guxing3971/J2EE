@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>利用分页展示用户信息</title>
+<style type="text/css">
+div#userlist {
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+	border-radius: 15px;
+	width: 800px;
+}
+
+div#pagepanle {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	function prepage() {
+		var curremtPage = document.getElementById("page").value;
+		var size = document.getElementById("size").value;
+		var curremtPage = document.getElementById("page").value=parseInt(curremtPage)-1;
+		userlist(parseInt(curremtPage)-1,size);
+	}
+	function nextpage() {
+		var curremtPage = document.getElementById("page").value;
+		var size = document.getElementById("size").value;
+		var curremtPage = document.getElementById("page").value=parseInt(curremtPage)+1;
+		userlist(parseInt(curremtPage)+1,size);
+		
+	}
+
+	function userlist(curremtPage,size){
+
+		var xmlHttpRequest = null;
+		if(window.XMLHttpRequest){
+			xmlHttpRequest = new XMLHttpRequest();
+		}else if(window.ActiveXObject){
+			xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		} 
+
+		xmlHttpRequest.open("get","/J2EE/spring/listuser.do?page="+curremtPage+"&size="+size);
+		xmlHttpRequest.onreadystatechange = function(){
+			if (xmlHttpRequest.readyState==4 && xmlHttpRequest.status==200){
+				    document.getElementById('userlist').innerHTML=xmlHttpRequest.responseText;
+				}
+			};
+
+		xmlHttpRequest.send(null);
+	}
+
+	function check(){
+		var curremtPage = document.getElementById("page").value;
+		var size = document.getElementById("size").value;
+		userlist(curremtPage,size);
+	}
+</script>
+</head>
+
+
+<body>
+	
+	<div id="pagepanle">
+
+		<form>
+			<a href="javascript:prepage()">&lt;&lt;&lt;&lt;</a>
+			当前页:<input type="text" id="page" name="page" value="1" size="3">
+			每页数:<input type="text" id="size" name="size" value="100" size="3">
+			<input type="button" value="查询" onclick="javascript:check()">
+			<a	href="javascript:nextpage()">&gt;&gt;&gt;&gt;</a>
+		</form>
+	</div>
+	<div id="userlist"></div>
+</body>
+</html>

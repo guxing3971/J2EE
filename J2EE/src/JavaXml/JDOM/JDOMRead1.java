@@ -20,7 +20,7 @@ public class JDOMRead1 {
 		//建立SAX解析引擎
 		SAXBuilder build = new SAXBuilder();
 		Document doc = null;
-			doc = build.build("xml\\JDOMRead1.xml");
+			doc = build.build("src/JavaXml/xml/JDOMRead1.xml");
 		
 		
 		

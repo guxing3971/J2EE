@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import JavaDao.DAO.DAO.emp_dao;
 import JavaDao.DAO.VO.emp;
 
 public class emp_impl implements JavaDao.DAO.DAO.emp_dao {

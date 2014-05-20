@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /***************************************************
- * @author Neptune
  * @summary	演示JavaIo流从文件中一行一行的读取数据
  ***************************************************/
 public class ReadLineFromFile {

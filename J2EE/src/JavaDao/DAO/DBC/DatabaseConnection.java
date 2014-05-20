@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 /**
  * 
- * @author 禅师
  * @resume 主要完成数据库的连接
  * 	
  * 注意：

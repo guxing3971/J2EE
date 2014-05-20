@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>获取html元素上注册的函数列表</title>
+<style type="text/css">
+	div{
+		margin: 0;padding: 0px;
+		width:800px;
+		height: 200px;
+		border: 1px solid;
+	}
+</style>
+<script type="text/javascript" src="../JQuery/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+function addEvent(elem,eventType,func) {
+	//用JS为DOM添加事件处理函数
+	if(elem.addEventListener){
+		elem.addEventListener(eventType,func,false);
+	}else if(elem.attachEvent){
+		elem.attachEvent('on'+eventType,func);
+	}else{
+		console.log("addEvent is faild!");
+	}
+}
+function method(){
+	//利用纯js为DOM添加的事件处理函数
+	console.log("method is running ["+event.type+"]"+$(this).html().trim());
+}
+
+function getJSFunctionList(){
+	//尝试获取DOM元素的所有属性，查看是否有绑定的事件函数
+	var obj = document.getElementById("jsFunctionList");
+	for(var i in obj){
+		console.log("obj."+i);
+	}
+}
+
+function method1(){
+	//利用JQuery为dom对象绑定事件处理函数
+	console.log("method1 is running ["+event.type+"]"+ $(this).html().trim());
+}
+
+function getJQueryFunctionList(){
+	//尝试获取JQuery为DOM添加的事件函数列表
+	console.log($("#jquery").data());
+}
+$(document).ready(function(){
+	//用js为dom添加事件处理函数，并尝试或事件处理函数列表
+	var obj = document.getElementById("js");
+	addEvent(obj,"click",method);
+	addEvent(obj,"mouseover",method);
+	addEvent(document.getElementById("jsFunctionList"),"click",getJSFunctionList);
+	//console.log(obj.addEventListenerList());
+	
+	//用Jquery为dom添加事件处理函数，并尝试获取事件处理函数列表
+	var $obj = $("#jquery");
+	$obj.bind("click",method1);
+	$obj.bind("mouseover",method1);
+	$("#jqueryFunList").bind('click',getJQueryFunctionList);
+});
+
+
+</script>
+</head>
+<body>
+	<div id="js">
+		利用js为元素添加事件函数<br/>
+		<input id="jsFunctionList" type="button" value="获取JS绑定的事件函数处理列表">
+	</div>
+	<div id="jquery">
+		利用jquery为元素添加事件函数<br/>
+		<input id="jqueryFunList" type="button" value="获取JQuery绑定的事件处理函数列表">
+	</div>
+</body>
+</html>

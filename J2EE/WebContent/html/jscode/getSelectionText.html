@@ -1,0 +1,23 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>获取选择的文本</title>
+</head>
+<body>
+	<div>
+		让JavaScript一统天下
+	</div>
+	<a href="javascript:baidu()">百度</a>
+	<script type="text/javascript">
+		function baidu(){
+			var key;
+			if(window.getSelection){
+				key = window.getSelection().toString();
+			}else if(document.selection){
+				key = document.selection.createRange().text;
+			}
+			window.open("http://www.baidu.com/#wd="+key);
+		}
+	</script>
+</body>
+</html>

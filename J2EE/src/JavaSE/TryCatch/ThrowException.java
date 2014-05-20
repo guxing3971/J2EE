@@ -1,7 +1,6 @@
 package JavaSE.TryCatch;
 /*************************************************
  * 
- * @author Neptunes
  * @summary 演示Java中手动抛出异常对象
  *************************************************/
 public class ThrowException {

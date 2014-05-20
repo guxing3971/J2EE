@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config.dtd">
+<struts-config>
+	
+	<form-beans>
+		<form-bean name="loginForm" type="struts1.form.loginForm"></form-bean>
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<!-- 请求信息 -->
+		<action path="/RequestParam" type="Action.RequestParamAction"  parameter="method" scope="request"></action>
+		
+		<!--测试form-->
+		<action attribute="loginForm" input="login.html" name="loginForm"
+			path="/strut1/login" scope="request" type="struts1.action.loginAction">
+			<forward name="login" path="/strut1/login.jsp"></forward>
+			<forward name="nologin" path="/strut1/nologin.jsp"></forward>
+		</action>
+
+		<action attribute="loginForm" input="displogin.html" name="loginForm"
+			path="/strut1/displogin" scope="request" parameter="method" type="struts1.action.loginDispatchAction">
+			<forward name="login" path="/strut1/login.jsp"></forward>
+			<forward name="nologin" path="/strut1/nologin.jsp"></forward>
+		</action>
+		
+		<!-- 利用hibernate罗列所有的用户 -->
+		<action path="/strut1/listuser" scope="request" parameter="method"
+			type="struts1.action.ListUserAction">
+		</action>
+		
+		<!-- 添加用户 -->
+		<action path="/strut1/adduser" scope="request" parameter="method"
+			type="struts1.action.AddUserAction">
+			<forward name="success" path="/strut1/adduser.html"></forward>
+		</action>
+		
+		<!-- 利用hibernate实现分页 -->
+		<action path="/spring/listuser" scope="request" type="struts1.action.LiserUserPageAction"></action>
+		
+		<action path="/strut1/hibrenate/user" scope="request" type="struts1.action.hibernateUserAction" parameter="method">
+			<forward name="success" path="/html/form/hibernate_adduser.html"></forward>			
+		</action>
+	</action-mappings>
+	<message-resources parameter="strut1.ApplicationResource" />
+</struts-config>

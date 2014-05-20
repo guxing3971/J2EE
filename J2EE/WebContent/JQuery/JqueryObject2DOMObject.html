@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>演示JQuery对象转换成DOM对象</title>
+<script type="text/javascript" src="./jquery-1.10.2.js"></script>
+<script	type="text/javascript">
+	$(function(){
+		var $alink = $("a");
+		alert($alink.length);
+		//利用下标的方式将Jquery对象转换成DOM对象
+		var a = $alink[0];
+		alert(a.innerHTML);
+		alert($alink[0].innerHTML)
+		//利用get方法将Juqery对象转换成DOM对象
+		var b = $alink.get(1);
+		alert(b.innerHTML );
+		alert($alink.get(1).innerHTML);
+		
+		//将DOM对象转换成JQuery对象
+		var a = document.getElementById("link");
+		var $a = $(a);
+		alert($a.html());
+	});
+</script>
+</head>
+<body>
+	<center>
+		<h1>演示JQuery对象转换成DOM对象</h1>
+		<pre>
+		Jquery对象不能使用DOM中的方法，但如果jquery没有封装想要的方法，不得不使用DOM对象的时候，可以按如下俩种方式处理
+			•Jquery对象是一个数组对象，可以通过[index]的方法得到对应的是DOM对象
+			•使用Jquery中的get(index)方法得到想要的DOM对象
+			
+		请打开console查看输出
+		</pre>
+	</center>
+	
+	<a class="link" href="#">测试1</a>
+	<a class="link" href="#">测试2</a>
+	<a class="link" href="#">测试3</a>
+	<a class="link" href="#">测试4</a>
+	<a class="link" href="#">测试5</a>
+	<a id="link" href="#">我是变种</a>
+</body>
+</html>

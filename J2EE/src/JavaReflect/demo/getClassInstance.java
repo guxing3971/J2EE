@@ -1,7 +1,6 @@
 ﻿package JavaReflect.demo;
 /**
  * 
- * @author 禅师
  * @resume 获取Class实例的三种方法
  * 				1.通过Class.forName()
  * 				2.通过Object.getClass()
@@ -19,7 +18,7 @@ public class getClassInstance {
 		Class<?> c3 = null;
 		
 		try {
-			c1 = Class.forName("demo.Y");
+			c1 = Class.forName("JavaReflect.demo.Y");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}

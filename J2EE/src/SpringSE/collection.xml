@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 	
 
-	<bean id="listArraySetBean" class="collection.ListArraySet">
+	<bean id="listArraySetBean" class="SpringSE.collection.ListArraySet">
 		<property name="list">
 			<list>
 				<value>B</value>
@@ -46,8 +46,7 @@
 		</property>
 	</bean>	
 	
-	<!-- 涓洪泦鍚堟寚瀹氶泦鍚堢被鍨?-->
-	<bean id="test" class="collection.ListArraySet">
+	<bean id="test" class="SpringSE.collection.ListArraySet">
 		<property name="list">
 			<list>
 				<value>B</value>

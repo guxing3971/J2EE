@@ -1,0 +1,50 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>演示获取表单元素</title>
+	<style type="text/css">
+		div{
+			width: 600px;
+			height: 200px;
+			margin-left: auto;
+			margin-right: auto;
+			background: #AAAAAA;
+		}
+		form{
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<form id="address" name="shipping" action="test.php" method="post">
+			国家:中国<input type="radio" name="method" value="中国">
+				:美国<input type="radio" name="method" value="美国"><br/>
+			user:<input type="text" name="user"><br>
+			pass:<input type="password" name="password"><br>
+			<button type="reset">reset</button>
+			<button type="submit" onclick="return HandlerForm()">submit</button>
+			
+
+		</form>
+	</div>
+	<script type="text/javascript">
+		function HandlerForm(){
+			var ele_form = document.forms.address;
+			var ele_cou = ele_form.elements.method;
+			var ele_user = ele_form.elements.user;
+			var ele_pass = ele_form.elements.password;
+			console.log(ele_form);
+			for(var i=0;i<ele_cou.length;i++){
+				if(ele_cou[i].checked)
+					console.log(ele_cou[i].value);
+			}
+			console.log(ele_user.value);
+			console.log(ele_pass.value);
+			return true;
+		}
+	</script>
+</body>
+</html>

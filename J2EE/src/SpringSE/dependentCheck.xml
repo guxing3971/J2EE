@@ -8,8 +8,8 @@
 
 	<context:annotation-config />
 
-	<bean id="test" class="dependentcheck.simplecheck">
-		<property name="name" value="Neptune" />
+	<bean id="test" class="SpringSE.dependentcheck.simplecheck">
+		<property name="name" value="snake" />
 		<property name="age" value="20" />
 		<property name="sdf">
 			<bean class="java.text.SimpleDateFormat">

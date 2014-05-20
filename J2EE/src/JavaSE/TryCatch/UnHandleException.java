@@ -1,7 +1,6 @@
 package JavaSE.TryCatch;
 /*******************************************
  * 
- * @author Neptunes
  * @summary 演示程序中异常未处理的情况
  *******************************************/
 public class UnHandleException {

@@ -9,7 +9,7 @@
 		<constructor-arg value="yyyy-MM-dd HH:mm:ss"/>
 	</bean>
 	
-	<bean id="year" class="refbean.TestRef">
+	<bean id="year" class="SpringSE.refbean.TestRef">
 		<property name="patter">
 			<bean class="java.lang.String">
 				<constructor-arg value="yyyy-MM-dd"/>
@@ -21,7 +21,7 @@
 	</bean>
 	
 	
-	<bean id="time" class="refbean.TestRef">
+	<bean id="time" class="SpringSE.refbean.TestRef">
 		<property name="patter">
 			<bean class="java.lang.String">
 				<constructor-arg value="HH:mm:ss"/>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./jquery-1.10.2.js"></script>
+<style type="text/css">
+	table{
+		border:2px solid #F00;
+	}
+	td{
+		border:1px solid #F00;
+		width:100px;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		//利用Jquery选择器或id为1的元素
+		$("#1");		//类似与document.getElementById("1");
+		$("td");		//类似与document.getElementByTagName("td");
+		
+		// 如果页面中没有id为21的元素下面的代码会报错
+		// document.getElementById("21").style.color="red";
+		//为了程序的健壮可以这样写
+		var obj = document.getElementById("21");
+		if(obj){
+			obj.style.color="red";
+		}
+		//但是在Jquery中可以这样写
+		$("21").css("color","red");
+		
+	});
+</script>
+
+<title>JQuery选择器</title>
+</head>
+<body>
+	<center>
+		<pre>
+		•选择器是Jquery的根基，在Jquery中，对事件处理，遍历DOM和Ajax操作都依赖于选择器
+		•Jquery选择器的优点：
+			-简洁的写法
+			-完善的事件处理机制
+		</pre>
+		<table>
+			<tr>
+				<td id="1">1</td>
+				<td id="2">2</td>
+				<td id="3">3</td>
+			</tr>
+			<tr>
+				<td id="11">1</td>
+				<td id="12">2</td>
+				<td id="13">3</td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>

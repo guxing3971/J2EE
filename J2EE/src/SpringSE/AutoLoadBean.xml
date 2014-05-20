@@ -9,9 +9,8 @@
 	
 	
 	<context:annotation-config />
-	<!-- 婕旗ずBean镄勮嚜锷ㄨ閰? -->
-	<bean id="stu" class="AutoLoadBean.Student"/>
+	<bean id="stu" class="SpringSE.AutoLoadBean.Student"/>
 	
-	<bean id="autoDemo" class="AutoLoadBean.annotationDemo"/>
+	<bean id="autoDemo" class="SpringSE.AutoLoadBean.annotationDemo"/>
 	
 </beans>

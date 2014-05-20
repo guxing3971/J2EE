@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>利用JavaScript实现动态加载js文件</title>
+<script type="text/javascript">
+	function load(){
+		var div = document.getElementById("load");
+		if(div.textContent){
+			div.textContent +=".";
+		}else{
+			div.innerText +=".";
+		}
+		//动态创建script元素，并插入到文档树中
+		var script = document.createElement("script");
+		script.src="Base_CreateElement01.js"
+		document.getElementsByTagName("head")[0].appendChild(script);
+	}
+	var tmid ="";
+	window.onload=function(){
+		tmid = window.setInterval(load,500);
+	}
+</script>
+</head>
+<body>
+	<div id="load">loading</div>
+</body>
+</html>

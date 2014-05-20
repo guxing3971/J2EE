@@ -1,7 +1,6 @@
 ﻿package JavaDao.DAO.DAO;
 /**
  * 
- * @author 禅师
  * @resume 定义emp vo的相关DAO操作接口。其实实现有DAO.IMPL.emp_impl.class实现
  * 
  */

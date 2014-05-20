@@ -1,7 +1,6 @@
 package JavaSE.oop;
 /************************************
  * 
- * @author Neptunes
  * @summary 演示在继承关系中发生的覆写
  ***********************************/
 class Persona{

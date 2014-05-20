@@ -68,7 +68,7 @@ public class DomWrite1 {
 		tformer.setOutputProperty(OutputKeys.ENCODING,"utf-8");
 		
 		//设置输出位置
-		StreamResult result = new StreamResult(new File("xml\\DomWrite1.xml"));
+		StreamResult result = new StreamResult(new File("src/JavaXml/xml/DomWrite1.xml"));
 		
 		
 		//执行输出

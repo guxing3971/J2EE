@@ -1,7 +1,6 @@
 package JavaSE.TryCatch;
 /****************************************
  * 
- * @author Neptunes
  * @summary 演示Java中的断言
  ****************************************/
 public class assertDemo {

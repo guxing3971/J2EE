@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用于获取元素的内容</title>
+<style type="text/css">
+.button{
+	width:700px;
+	height: auto;
+	margin: auto;
+	pause: 0px;
+}
+</style>
+<script type="text/javascript">
+	function getinnerHTML(){
+		//通过innerHTML获取元素的内容
+		var span = document.getElementsByTagName("span")[0];
+		alert(span.innerHTML);
+	}
+	function getouterHTML(){
+		//通过outerHTML获取元素的内容，包括元素本身
+		var span = document.getElementsByTagName("span")[0];
+		alert(span.outerHTML);
+	}
+	function Test_insertAjacentHTML(){
+		var span = document.getElementsByTagName("span")[0];
+		//在span开始标签后加入一个新字符串
+		span.insertAdjacentHTML("afterbegin","<b>new String:</b>");
+	}
+	function getTextContent(){
+		var span = document.getElementsByTagName("span")[0];
+		//获得元素的文本内容。
+		var text ="";
+		if(span.textContent){
+			//标准的Node方式实现
+			text = span.textContent;
+		}else{
+			//IE方式实现
+			text = span.innerText;
+		}
+		alert(text);
+	}
+	/*
+	 * @function textContent():获取元素的送子节点的纯文本内容
+	 */
+	function text_textContent(elt){
+		var child,type,s="";
+		for(child=elt.firstChild;child != null;child=child.nextSibling){
+			type=child.nodeType;
+			if(3=== type || 4===type){
+				//如果是text节点或cdata节点则保存内容到s
+				s += child.nodeValue;
+			}
+			if(1=== type){
+				//递归获取文本
+				s += text_textContent(child);
+			}
+		}
+		return s;
+	}
+	function textNode(){
+		//将文本当做文本节点处理
+		var span = document.getElementsByTagName("span")[0];
+		alert(text_textContent(span));
+	}
+</script>
+</head>
+<body>
+	<div class="button">
+		<input type="button" value="innerHTML" onclick="javascript:getinnerHTML()">
+		<input type="button" value="outerHTML" onclick="javascript:getouterHTML()">
+		<input type="button" value="insertAdjacentHTML" onclick="javascript:Test_insertAjacentHTML()">
+		<input type="button" value="textContent" onclick="javascript:getTextContent()">
+		<input type="button" value="text-nodeValue" onclick="javascript:textNode()">
+	</div>
+	<div>
+		<span>this is a <i>simple</i> document</span>
+	</div>
+</body>
+</html>

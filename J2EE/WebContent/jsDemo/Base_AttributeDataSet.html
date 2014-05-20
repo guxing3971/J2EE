@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>测试HTML5的Dataset属性</title>
+<script>
+	window.onload=function(){
+		var span = document.getElementsByClassName("spr");
+		for(var i=0;i<span.length;i++){
+			var dataset = span[i].dataset;
+			var yin = parseFloat(dataset.yin);
+			var yout = parseFloat(dataset.yout);
+			console.log("yin:"+yin+"\tyout:"+yout);
+		}
+		//获取a标签，并且枚举它的所有属性
+		var a= document.getElementById("a");
+		Array.prototype.map.call(
+				a.attributes,
+				function(e){
+					console.log("a["+e.name+"]:"+e.value);	
+				}	
+			);
+	};
+</script>
+</head>
+<body>
+	<span class="spr" data-yin="10.0" data-yout="-10.0">
+		this is span-tag
+	</span>
+	<a id="a" class="link" href="#" onclick="javascript:void(0);" data-x="1" data-y="0">tag-a</a>
+</body>
+</html>

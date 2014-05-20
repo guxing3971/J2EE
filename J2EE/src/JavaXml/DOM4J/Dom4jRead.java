@@ -11,7 +11,7 @@ import org.dom4j.io.SAXReader;
 public class Dom4jRead {
 
 	public static void main(String[] args) {
-		File file = new File("xml\\Dom4jRead.xml");
+		File file = new File("src/JavaXml/xml/Dom4jRead.xml");
 		
 		//建立SAX解析器
 		SAXReader read = new SAXReader();

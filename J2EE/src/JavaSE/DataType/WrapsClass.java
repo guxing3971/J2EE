@@ -1,7 +1,6 @@
 package JavaSE.DataType;
 /**********************************************
  * 
- * @author Neptunes
  * @summary 演示Java的包装类
  **********************************************/
 public class WrapsClass {

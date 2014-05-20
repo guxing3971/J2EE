@@ -1,7 +1,6 @@
 package JavaSE.DataType;
 /************************************************
  * 
- * @author Neptunes
  * @summary 演示将字符串转换为整数
  ************************************************/
 public class ParseIntFormStr {

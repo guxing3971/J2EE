@@ -1,0 +1,15 @@
+/*外部样式表*/
+h1{
+	color:#F00;
+	background: #CCFFCC;
+}
+h2{
+	color:#F00;
+	background: #C9C;
+}
+h3{
+	color:#F00;
+	background: #C3C;
+}
+/*通过import导入样式表*/
+@import url(04_useCss2.css)

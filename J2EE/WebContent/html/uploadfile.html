@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function postFile(){
+	console.log("function is running....!");
+    var elts = document.getElementById("file");
+    var i = 0,
+        files = elts.files,
+        len = files.length;
+    var reader = new FileReader(); 
+    for (; i < len; i++) {
+        console.log("Filename: " + files[i].name);
+        console.log("Type: " + files[i].type);
+        console.log("Size: " + files[i].size + " bytes");
+        console.log(files[i]);
+    }
+}
+</script>
+</head>
+<body>
+	<form action="../jsp/uploadfile.jsp" enctype="MULTIPART/FORM-DATA" method="post">
+		作    者<input type="text" name="username" /><br/>
+		出版社<input type="text" name="cbshe"/><br/>
+		<input type="file" name="filename" onchange="postFile()"><br/>
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>

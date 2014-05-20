@@ -26,7 +26,7 @@ public class Dom4jWrite {
 		
 		//设置内容
 		name.setText("禅师");
-		email.setText("snakeam@163.com");
+		email.setText("snake@163.com");
 		
 		//输出到文件中
 		OutputFormat format = OutputFormat.createPrettyPrint();
@@ -34,7 +34,7 @@ public class Dom4jWrite {
 		
 		try {
 			XMLWriter out = new XMLWriter(new 
-					FileOutputStream(new File("xml\\Dom4jWrite.xml")));
+					FileOutputStream(new File("src/JavaXml/xml/Dom4jWrite.xml")));
 			out.write(doc);
 			out.close();
 		} catch ( Exception e) {

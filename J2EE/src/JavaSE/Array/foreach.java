@@ -2,7 +2,6 @@ package JavaSE.Array;
 
 /*******************************************
  * 
- * @author Neptunes
  * @summary 演示使用foreach语句变量数组
  */
 public class foreach {
