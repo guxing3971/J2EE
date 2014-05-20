@@ -1,2 +1,4 @@
 *.class
+
 logs/
+J2EE/WebContent/WEB-INF/classes/
