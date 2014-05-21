@@ -10,5 +10,31 @@
 </head>
 <body>
 	Tips:<i>展示用JQuery.getScript动态加载一个脚本并执行</i>
+	<meta charset="UTF-8">
+	<title>JQuery Ajax Demo</title>
+	<script type="text/javascript" src="jquery-1.10.2.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			console.log("this running");
+			//利用JQuery.getScript动态加入一个脚本本执行
+			jQuery.getScript("Ajax_getScript01.js");
+			//设置回调函数
+			jQuery.getScript("Ajax_getScript01.js",
+				function(response,status){
+					//param:
+					//	response:返回脚本的内容
+					//	status:表示是否成功
+					if("success" == status){
+						alert(response);
+					}else{
+						alert("loading error");
+					}
+				}
+			);
+		});
+	</script>
+</head>
+<body>
+	<p>This Page's Tips</p>
 </body>
 </html>
