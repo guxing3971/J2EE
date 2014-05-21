@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery Ajax Demo</title>
+	<script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		function loadTime(){
+			//利用jquery的Ajax工具函数load从百度加载最新的时间
+			//并在id="time"处显示
+			//注意此处chrome必须在http环境中测试，否则会应用同源策略ajax无法工作
+
+			//加载全部内容
+			$("#time").load("Ajax_load1.html");
+
+			//用Ajax_load1.html中id=content页面中div内容替换
+			$("#time1").load("Ajax_load1.html #content");
+		}
+
+		function loadCall(){
+			//利用load方法传递数据，并且在调用是直线回调函数
+			$("#time2").load(
+					"Ajax_load1.html",
+					{username:"test",password:"f4ck2212"},
+					//回调函数
+					function (){
+							alert("1111111111");
+						}
+				);
+		}
+
+		function handler(){
+			var url ="Ajax_load2.xml";
+			$("#time3").load(
+				url,
+				function(response,status){
+					if("success" == status){
+						$("#time3").html("<ul></ul>");
+						$(response).find("name").each(function(){
+							var text =$(this).text();
+							$("<li></li>").html(text).appendTo($("ul"));
+						})
+					}
+				});
+		}
+	</script>
+</head>
+<body>
+	<div id="time"></div>
+	<div id="time1"></div>
+	<div id="time2"></div>
+	<div id="time3"></div>
+	<input type="button" value="load" onclick="loadTime()">
+	<input type="button" value="load and callback" onclick="loadCall()">
+	<input type="button" value="load and handler" onclick="handler()">
+</body>
+</html>

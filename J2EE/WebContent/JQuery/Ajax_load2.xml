@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user>
+		<name>test1</name>
+		<email>test1@qq.com</email>
+		<sex>男</sex>
+	</user>
+	<user>
+		<name>test2</name>
+		<email>test2@qq.com</email>
+		<sex>女</sex>
+	</user>
+	<user>
+		<name>test3</name>
+		<email>test3@qq.com</email>
+		<sex>男</sex>
+	</user>
+	<user>
+		<name>test3</name>
+		<email>test3@qq.com</email>
+		<sex>女</sex>
+	</user>
+</users>
