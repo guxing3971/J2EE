@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Ajax Demo</title>
+	<script type="text/javascript" src="jquery-1.10.2.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			jQuery.getJSON("Ajax_getJSON.json",function(responseObj,status){
+				if("success" == status){
+					var text =responseObj.name+"\n";
+					for(var i=0;i<responseObj.province.length;i++){
+						var temp =responseObj.province[i];
+						text += "\t"+temp.name+"\n";
+					 	text += "\t\t"+temp.cities.city+"\n";
+					}
+					console.log(text);
+					alert(text);
+				}else{
+					console.log("loading error");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>This Page's Tips:</p>
+</body>
+</html>
