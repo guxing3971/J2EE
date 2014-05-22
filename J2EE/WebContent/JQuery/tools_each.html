@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery tools Function</title>
+	<link rel="stylesheet" type="text/css" href="know.css">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		
+		function eltEach(){
+			//用于演示$("x").each()发函数
+			$("li").each(function(){
+				console.log($(this).text());
+			});
+		}
+
+		function each(){
+			//演示JQuery.each的用法
+			//遍历DOM对象
+			jQuery.each($("li"),function(i,elt){
+				var log ="ele"+i+"\t typeof:"+ typeof elt+"\ttoString:"+elt;
+				log += "\tvalue:" + (elt.textContent || elt.innerText);
+				console.log(log);
+			});
+
+			//遍历数组
+			jQuery.each([1,2,3,4,5,6],function(i,value){
+				console.log("arr#"+i+"->value:"+value);
+			});
+			//遍历普通对象
+			jQuery.each(
+					{name:"text",set:"unknow"},
+					function(prop,value){
+						console.log("obj."+prop+"=>"+value);
+					}
+				);
+		}
+
+		$(function(){
+			eltEach();
+			each();
+		});
+	</script>
+</head>
+<body>
+	<div id="know">
+		不同于例遍 jQuery 对象的 $().each() 方法，此方法可用于例遍任何对象。回调函数拥有两个参数：第一个为对象的成员或数组的索引，第二个为对应变量或内容。如果需要退出 each 循环可使回调函数返回 false，其它返回值将被忽略。
+	</div>
+	<div>
+		<ul>
+			<li>1111111111</li>
+			<li>1111111111</li>
+			<li>1111111111</li>
+			<li>1111111111</li>
+			<li>1111111111</li>
+		</ul>
+	</div>
+</body>
+</html>

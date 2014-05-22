@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery tools Function</title>
+	<link rel="stylesheet" type="text/css" href="know.css">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var arr1 =[1,2,3,4];
+			var arr2 =[4,5,6,7];
+			//合并数组
+			var arr3 = jQuery.merge(arr1,arr2);
+			console.log(arr3);
+			//去重
+			var arr4 = jQuery.unique(arr3);
+			console.log(arr4);
+		});
+	</script>
+</head>
+<body>
+	<div id="know">
+		合并两个数组<br/>
+		返回的结果会修改第一个数组的内容——第一个数组的元素后面跟着第二个数组的元素。要去除重复项，请使用$.unique()<br/>
+		jQuery.merge(first,second)<br/>
+		first:第一个待处理数组，会改变其中的元素。<br/>
+		second:第二个待处理数组，不会改变其中的元素。<br/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery tools Function</title>
+	<link rel="stylesheet" type="text/css" href="know.css">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//Tesing arr
+			var arr =[-9,-8,-6,-4,-3,0,1,5,6,8];
+			var arr1 = jQuery.map(arr,function(e){
+				return e * e;
+			});
+			console.log(arr);
+
+			//Teinsg obj
+			var obj ={name:"name1",value:"value1"};
+			var obj1 = jQuery.map(obj,function(e){
+				//此处e代表对象的属性值
+				return e += e + '_Test';
+			});
+			console.log(obj1);
+
+			//Tesing DOM nodelist
+			var nodelist = document.getElementsByTagName('a');
+			var nodelist =jQuery.map(nodelist,function(node){
+				console.log(node.href);
+				node.href="#";
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div id="know">
+		将一个数组中的元素转换到另一个数组中。<br/>
+		作为参数的转换函数会为每个数组元素调用，而且会给这个转换函数传递一个表示被转换的元素作为参数。转换函数可以返回转换后的值、null（删除数组中的项目）或一个包含值的数组，并扩展至原始数组中。<br/>
+		jQuery.map(arr|obj,callback)<br/>
+		arrayOrObject:数组或者对象。
+		为每个数组元素调用，而且会给这个转换函数传递一个表示被转换的元素作为参数。函数可返回任何值。另外，此函数可设置为一个字符串，当设置为字符串时，将视为“lambda-form”（缩写形式？），其中 a 代表数组元素。如“a * a”代表“function(a){ return a * a; }”。<br/>
+		callbackArray:为每个数组元素调用，而且会给这个转换函数传递一个表示被转换的元素作为参数。函数可返回任何值。另外，此函数可设置为一个字符串，当设置为字符串时，将视为“lambda-form”（缩写形式？），其中 a 代表数组元素。如“a * a”代表“function(a){ return a * a; }”。<br/>
+	</div>
+	<a href="aaaaaa">First</a><a href="bbbbbbb">Second</a><a  href="cccccc">Third</a><a href="ddddd">Fourth</a>
+</body>
+</html>

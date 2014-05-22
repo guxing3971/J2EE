@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery tools Function</title>
+	<style type="text/css">
+		#browser{
+			margin: auto;
+			padding: 0pox;
+			text-indent: 4px;
+			font-size: 14px;
+			font-family: '微软雅黑';
+			border: 1px solid;
+			border-radius:8px;
+			width: 400px;
+			height: 50px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//可以使用JQuery.support检查浏览器的一些特性
+			//检查浏览器是元素透明
+			$("#browser").html("透明opacity:"+jQuery.support.opacity+"<br/>");
+		});
+	</script>
+</head>
+<body>
+	<div id="browser"></div>
+</body>
+</html>
