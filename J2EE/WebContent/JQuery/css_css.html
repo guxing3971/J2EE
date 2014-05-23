@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery CSS Demo</title>
+	<link rel="stylesheet" type="text/css" href="know.css">
+
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		function getStyleValue(){
+			alert($("#p1").css("color"));
+		}
+		function setStyleProperties(){
+			$("#p2").css({
+				color:"#c0c0ff",
+				fontSize:"4em",
+				background:"#c08080"
+			});
+		}
+		function setStyleNameValue(){
+			$("#p3").css("color","#800060")
+			.css("background","#60c0ff");
+		}
+		function setStylefunction(){
+			$("#p4").css({
+				color:function(){
+						return RnadomAlphaNum();
+					},
+				background:RnadomAlphaNum()
+			});
+		}
+		function RnadomAlphaNum(){
+			//随机生成一个颜色代码
+			var rdmStr="",len=6;
+			for(;rdmStr.length < len;rdmStr += Math.random().toString(16).substr(2));
+			 return "#"+rdmStr.substr(0,len);
+		}
+	</script>
+</head>
+<body>
+	<div id="know">
+<pre>
+·css(name|pro|[,val|fn])
+	访问/设置匹配元素的样式属性。
+	name
+		要访问的属性名称
+	properties
+		要设置为样式属性的名/值对
+	name,valueString
+		属性名,属性值
+	name,function(index, value)
+		1:属性名
+		2:此函数返回要设置的属性值。
+		接受两个参数，index为元素在对象集合中的索引位置，value是原先的属性值。
+</pre>
+	</div>
+	<div>
+		<p  id="p1" style="color:red;font-size:3em">P111111111111</p>
+		<input type="button" value="getStyleValue" onclick="getStyleValue()">
+		<p id="p2">P22222222222222222222222222</p>
+		<input type="button" value="setStyleProperties" onclick="setStyleProperties()">
+		<p id="p3">P3333333333333333333333333</p>
+		<input type="button" value="setStyleNameValue" onclick="setStyleNameValue()">
+		<p id="p4">P4444444444444444444444444</p>
+		<input type="button" value="setStylefunction" onclick="setStylefunction()">
+	</div>
+</body>
+</html>
