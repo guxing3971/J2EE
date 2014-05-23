@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery Animation Demo</title>
+	<link rel="stylesheet" type="text/css" href="know.css">
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("img").bind({
+						mouseover:function(){$(this).stop().fadeTo(300,0.2);},
+						mouseout:function(){$(this).stop().fadeTo(300,1);}
+					});
+			});
+	</script>
+</head>
+<body>
+	<img src="../images/85_avatar_middle.gif">
+</body>
+</html>

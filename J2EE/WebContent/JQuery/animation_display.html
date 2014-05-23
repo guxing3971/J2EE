@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery Animation Demo</title>
+	<link rel="stylesheet" type="text/css" href="know.css">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		function P1_show(){
+			$("#p1").show();
+		}
+		function P1_hidde(){
+			$("#p1").hide();
+		}
+		function P1_toggle(){
+			$("#p1").toggle();
+		}
+
+		function P2_show(){
+			$("#p2").show("normal","linear",function(){alert("call show....");});
+		}
+		function P2_hidde(){
+			$("#p2").hide("slow","linear",function(){alert("call hide.....");});
+		}
+		function P2_toggle(){
+			$("#p2").toggle("slow","linear",function(){alert("call toggle.....");});
+		}
+	</script>
+</head>
+<body>
+	<div id="know">
+		<pre>
+jQuery提供了功能：
+	通过CSS的display属性设置来才是动画，并在动画完成后可选地触发一个回调函数。
+jQuery提供了如下的方式，以便实现上述功能：
+	show/hidde/toggle
+	·show([speed,[easing],[fn]])
+		speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)
+		easing:(Optional) 用来指定切换效果，默认是"swing"，可用参数"linear"
+		fn:在动画完成时执行的函数，每个元素执行一次。
+	·hide([speed,[easing],[fn]])
+		speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)
+		easing:(Optional) 用来指定切换效果，默认是"swing"，可用参数"linear"
+		fn:在动画完成时执行的函数，每个元素执行一次。
+
+		</pre>
+	</div>
+
+	<div>
+		<p id="p1">
+			p1111111111111111111111111111111111111111111111
+		</p>
+			<input type="button" value="show" onclick="P1_show()">
+			<input type="button" value="hidde" onclick="P1_hidde()">
+			<input type="button" value="toggle" onclick="P1_toggle()">
+		<hr/>
+		<p id="p2">
+			p2222222222222222222222222222222222222222222222
+		</p>
+			<input type="button" value="show" onclick="P2_show()">
+			<input type="button" value="hidde" onclick="P2_hidde()">
+			<input type="button" value="toggle" onclick="P2_toggle()">
+	</div>
+</body>
+</html>
