@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery CSS Demo</title>
+	<link rel="stylesheet" type="text/css" href="know.css">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("p").bind("click",function(){
+				alert($(this).height()+"\t"+ $(this).width());
+				$(this).height(200).width(200);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="know">
+<pre>
+·height([val|fn])
+	取得匹配元素当前计算的高度值（px）。
+	在 jQuery 1.2 以后可以用来获取 window 和 document 的高
+	val
+	设定CSS中 'height' 的值，可以是字符串或者数字，还可以是一个函数，
+	返回要设置的数值。函数接受两个参数，
+	第一个参数是元素在原先集合中的索引位置，第二个参数为原先的高度。
+	function(index, height)
+	返回用于设置高度的一个函数。接收元素的索引位置和元素旧的高度值作为参数。
+·width([val|fn])
+	取得第一个匹配元素当前计算的宽度值（px）。
+	在 jQuery 1.2 以后可以用来获取 window 和 document 的宽
+	val
+	设定CSS中 'width' 的值，可以是字符串或者数字，还可以是一个函数，
+	返回要设置的数值。函数接受两个参数，
+	第一个参数是元素在原先集合中的索引位置，第二个参数为原先的宽度。
+	function(index, height)
+	返回用于设置宽度的一个函数。接收元素的索引位置和元素旧的宽度值作为参数。
+</pre>
+	</div>
+	<div>
+		<p>111111111111111click me!</p>
+		<p>222222222222222</p>
+	</div>
+</body>
+</html>
