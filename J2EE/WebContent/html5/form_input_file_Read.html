@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试html5中的file对象</title>
+	<script type="text/javascript">
+		function showFileName(){
+			//判断浏览器是否支持FileReader接口
+			var reader;
+			if(typeof FileReader =='undefined'){
+				alert("你的浏览器不支持FileReader");
+				return false;
+			}else{
+				reader = new FileReader();
+			}
+			var files=document.getElementById("file").files;
+			for (var i = 0;i<files.length;i++) {
+				reader.readAsBinaryString(files[i]);
+				reader.onload=function(e){
+					console.log(this.result);
+				}
+			};
+		}
+
+	</script>
+</head>
+<body>
+	选择文件:
+	<input type="file" id="file" multiple size="80">
+	<input type="button" onclick="showFileName()" value="upload">
+</body>
+</html>

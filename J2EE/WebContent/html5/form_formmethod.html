@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试html5的form的formmethod属性</title>
+</head>
+<body>
+		<form name="register" action="register.do">
+		username:<input type="text" name="username"><br/>
+		password:<input type="password" name="password"><br/>
+		<input type="submit" formaction="validate.jsp" formmethod="post" value="密码安全严重">
+		<input type="submit"  value="安全注册">
+	</form>
+</body>
+</html>

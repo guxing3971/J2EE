@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试html5中的file对象</title>
+	<script type="text/javascript">
+		function showFileName(){
+			var files=document.getElementById("file").files;
+			for (var i = 0;i<files.length;i++) {
+				file =files[i];
+				//判定上传的文件是不是图片
+				if(!/image\/\w+/.test(file.type)){
+					alert("你上传的文件不是图片类型的！");
+				}else{
+					console.log(file.name+"\t"+file.type);
+				}
+			};
+
+		}
+
+	</script>
+</head>
+<body>
+	选择文件:
+	<input type="file" id="file" multiple size="80">
+	<!--通过accept属性指定接受的类型-->
+	<input type="file" accept="image/*">
+	<input type="button" onclick="showFileName()" value="upload">
+</body>
+</html>

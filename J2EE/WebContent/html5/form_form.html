@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试html5的表单的form属性</title>
+</head>
+<body>
+	<form id="register">
+		username:<input type="text" name="user"><br/>
+		password:<input type="password" name="password"><br/>
+		<input type="submit"  value="register">
+	</form>
+	<!--在html4中email不会被提交的-->
+	email:<input form="register" type="text" name="email">
+</body>
+</html>

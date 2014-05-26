@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试html5中的file对象</title>
+	<script type="text/javascript">
+		function showFileName(){
+			var files=document.getElementById("file").files;
+
+			//document.getElementById("file").files返回FileList文件列表对象
+			for (var i = 0;i<files.length;i++) {
+				
+				//file对象为用户选择的单个文件
+				//file = files[i]
+				//alert(file);
+				console.log("filename:"+files[i].name+"\ttype:"+files[i].type+"\tsize:"+files[i].size);
+				console.log(files[i].slice());
+
+			};
+		}
+
+	</script>
+</head>
+<body>
+	选择文件:
+	<input type="file" id="file" multiple size="80">
+	<input type="button" onclick="showFileName()" value="upload">
+</body>
+</html>
