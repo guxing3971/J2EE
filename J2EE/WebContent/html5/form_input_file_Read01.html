@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试FileReader</title>
+	<script type="text/javascript">
+		function getReader(){
+			var reader;
+			if(typeof FileReader == 'undefined'){
+				return false;
+			}else{
+				reader = new FileReader();
+			}
+			return reader;
+		}
+		function BinaryString(){
+			var files = document.getElementById("file").files;
+			var reader = new getReader();
+			for(var i=0;i<files.length;i++){
+				reader.readAsBinaryString(files[i]);
+				reader.onload=function(){
+					var result= this.result;
+					var div = document.createElement("div");
+					if(div.textContent){
+						div.textContent=result;
+					}else{
+						div.innerText=result;
+					}
+					document.body.appendChild(div);
+				};
+			}
+		}
+		function asText(){
+			var files = document.getElementById("file").files;
+			var reader = new getReader();
+			for(var i=0;i<files.length;i++){
+				reader.readAsText(files[i]);
+				reader.onload=function(){
+					var result= this.result;
+					var div = document.createElement("div");
+					if(div.textContent){
+						div.textContent=result;
+					}else{
+						div.innerText=result;
+					}
+					document.body.appendChild(div);
+				};
+			}
+		}
+		function DataURL(){
+			var files = document.getElementById("file").files;
+			var reader = new getReader();
+			for(var i=0;i<files.length;i++){
+				reader.readAsDataURL(files[i]);
+				reader.onload=function(){
+					var result= this.result;
+					var div = document.createElement("div");
+					if(div.textContent){
+						div.textContent=result;
+					}else{
+						div.innerText=result;
+					}
+					document.body.appendChild(div);
+				};
+			}
+		}
+	</script>
+</head>
+<body>
+	选择文件<input type="file" id="file" multiple size="80"><br/>
+	<input type="button" value="readAsBinaryString" onclick="BinaryString()">
+	<input type="button" value="readAsText" onclick="asText()">
+	<input type="button" value="readAsDataURL" onclick="DataURL()">
+	<input type="button" value="abort" onclick="abort()">
+</body>
+</html>

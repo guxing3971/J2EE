@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>拖曳测试</title>
+	<style type="text/css">
+		#source,#target{
+			margin: 10px auto;
+			padding: 0px;
+			border: 1px solid;
+			width: 50%;
+			height: 150px;
+		}
+		.title{
+			margin: 0px;
+			padding: 0px;
+			text-align: center;
+			font-size: 12px;
+			background: #bee;
+			width: 100%;
+			height: 14px;
+		}
+		img{
+			width: 140px;
+			height: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var sources = document.getElementsByTagName("img");
+			var target = document.getElementById("target");
+			for(var i=0;i<sources.length;i++){
+				sources[i].ondragstart = function(e){
+				console.log(this.id);
+			  	e.dataTransfer.setData('imageId', this.id);
+			};
+			}
+			
+			target.ondragover = function(e){
+				e.dataTransfer.dropEffect = 'move';
+				e.preventDefault(); // 不能少
+			};
+			target.ondrop = function(e){
+				var id = e.dataTransfer.getData('imageId');
+				var ele = document.getElementById(id);
+				ele.parentNode.removeChild(ele);
+				target.appendChild(ele);
+			};
+		}
+
+		function deleteFile(){
+			var target = document.getElementById("target");
+			var elements = target.getElementsByTagName("img");
+			var delete_file = "";
+			for(var i=0;i<elements.length;i++){
+				delete_file +=elements[i].id+"|";
+			}
+			var xmlHttp;
+			if (window.XMLHttpRequest){
+			  	xmlHttp=new XMLHttpRequest();
+			}else{
+			  xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlHttp.open("get", "deleteImage.do?id=" + delete_file);
+
+	        xmlHttp.onreadystatechange = function () {
+	            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+	                document.getElementById("result").innerHTML = xmlHttp.responseText;
+	            }
+	        }
+	        xmlHttp.send(null);
+		}
+	</script>
+</head>
+<body>
+	<div id="source">
+		<div class="title">资源</div>
+		<div class="list">
+			<img draggable="true" id="mg01.jpg"  src="image/img01.jpg">
+			<img draggable="true" id="mg02.jpg"  src="image/img02.jpg">
+			<img draggable="true" id="mg03.jpg"  src="image/img03.jpg">
+			<img draggable="true" id="mg04.jpg"  src="image/img04.jpg">
+		</div>
+	</div>
+	<div id="target">
+		<div class="title">回收站</div>
+	</div>
+	<input type="button" value="确认删除" onclick="deleteFile()">
+</body>
+</html>

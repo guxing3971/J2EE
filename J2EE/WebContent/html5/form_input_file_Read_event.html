@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试FileReader</title>
+	<script type="text/javascript">
+		function getReader(){
+			var reader;
+			if(typeof FileReader == 'undefined'){
+				return false;
+			}else{
+				reader = new FileReader();
+			}
+			return reader;
+		}
+		function BinaryString(){
+			var files = document.getElementById("file").files;
+			var reader = new getReader();
+			for(var i=0;i<files.length;i++){
+				reader.readAsBinaryString(files[i]);
+				reader.onload=function(){
+					var result= this.result;
+					var div = document.createElement("div");
+					if(div.textContent){
+						div.textContent=result;
+					}else{
+						div.innerText=result;
+					}
+					document.body.appendChild(div);
+				};
+				reader.onabort=function(){console.log("onabort")};
+				reader.onerror=function(){console.log("onerror")};
+				reader.onloadstart=function(){console.log("onloadstart")};
+				reader.onloadend=function(){console.log("onloadend")};
+				reader.onprogress=function(){console.log("onprogress")};
+
+			}
+		}
+
+	</script>
+</head>
+<body>
+	选择文件<input type="file" id="file" multiple size="80"><br/>
+	<input type="button" value="readFile" onclick="BinaryString()">
+</body>
+</html>

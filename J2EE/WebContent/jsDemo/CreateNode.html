@@ -32,11 +32,7 @@
 			var parent = document.getElementById("addContent");
 			var ele = document.createElement("div");
 			ele.className="add";
-			if(ele.textContent){
-				ele.textContent=new Date().getTime();
-			}else{
-				ele.innerText=new Date().getTime();
-			}
+			ele.textContent=new Date().getTime();
 			parent.appendChild(ele);
 		}
 		setInterval(addNode,1000);
