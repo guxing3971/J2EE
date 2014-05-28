@@ -45,7 +45,6 @@ li{
 	width: 20%;
 	line-height: 18px;
 	float: left;
-	overflow:hidden;
 	background: url(images/dot.gif) repeat-X bottom;	
 }
 li a{

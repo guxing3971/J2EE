@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试canvas元素</title>
+	<style type="text/css">
+		body>h1{
+			margin: 0px auto;
+			text-align: center;
+			font-size: 20px;
+			font-family: '微软雅黑'
+		}
+		canvas{
+			margin: auto;
+			width: 600px;
+			height: 300px;
+		}
+		div{
+			margin: 0px auto;
+			padding: 0px;
+			width: 80%;
+			border: 1px solid #bbb;
+		}
+		section{
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			border: 1px solid #f5fa99;
+		}
+		section>h1{
+			margin: 0px auto;
+			font-size: 14px;
+			font-family: '微软雅黑'
+		}
+	</style>
+	<script type="text/javascript">
+		function demo01(){
+			var canvas = document.getElementById("demo01")
+            if (canvas == null)
+                return false;
+            var context = canvas.getContext("2d");
+            //实践表明在不设施fillStyle下的默认fillStyle=black
+            context.fillRect(5, 5, 100, 20);
+            //实践表明在不设施strokeStyle下的默认strokeStyle=black
+            context.strokeRect(120, 5, 100, 20);
+
+            //设置纯色
+            context.fillStyle = "red";
+            context.strokeStyle = "blue";
+            context.fillRect(5, 30, 100, 20);
+            context.strokeRect(120, 30, 100, 20);
+
+            //设置透明度实践证明透明度值>0,<1值越低，越透明，值>=1时为纯色，值<=0时为完全透明
+            context.fillStyle = "rgba(255,0,0,0.2)";
+            context.strokeStyle = "rgba(255,0,0,0.2)";
+            context.fillRect(240,5 , 100, 20);
+            context.strokeRect(240, 30, 100, 20);
+
+
+            //测试清除矩形
+            context.clearRect(80,10,100,30);
+		}
+
+		window.onload= function(){
+			demo01();
+		}
+	</script>
+</head>
+<body>
+	<h1>测试canvas标签</h1>
+	<div>
+	<section>
+		<h1>绘制矩形</h1>
+		<canvas id="demo01"></canvas>
+	</section>
+</div>
+</body>
+</html>
