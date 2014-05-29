@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试html5的web storage功能</title>
+	<script type="text/javascript">
+		function sessionSave(){
+			var value = document.getElementById("input").value;
+			sessionStorage.setItem("message",value);
+			console.log(value);
+		}
+		function sessionLoad(){
+			var msg = sessionStorage.getItem("message");
+			var elem = document.getElementById("result");
+			if(elem.textContext){
+				elem.textContext=msg;
+			}else{
+				elem.innerHTML=msg;
+			}
+		}
+		function localSave(){
+			var value = document.getElementById("input").value;
+			localStorage.setItem("message",value);
+		}
+		function localLoad(){
+			var msg = localStorage.getItem("message");
+			var elem = document.getElementById("result");
+			if(elem.textContext){
+				elem.textContext=msg;
+			}else{
+				elem.innerHTML=msg;
+			}
+		}
+
+	</script>
+</head>
+<body>
+<p id="result"></p>
+<input id="input" type="text" name="input">
+<input type="button" value="sessionStorage" onclick="sessionSave()">
+<input type="button" value="sessionLoad" onclick="sessionLoad()">
+<input type="button" value="localStorage" onclick="localSave()">
+<input type="button" value="localLoad" onclick="localLoad()">
+</body>
+</html>

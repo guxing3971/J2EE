@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>将数据以JSON的格式存储在本地中</title>
+	<script type="text/javascript">
+		function storage(){
+			var data = new Object();
+			data.name = document.getElementById("name").value;
+			data.tel = document.getElementById("tel").value;
+			data.email = document.getElementById("email").value;
+			var str = JSON.stringify(data);
+			localStorage.setItem(data.name,str);
+		}
+
+		function search(){
+			var name = document.getElementById("s_name").value;
+			var data = JSON.parse(localStorage.getItem(name));
+			var html="姓名:"+data.name+" "
+					+"联系电话:"+data.tel+" "
+					+"联系邮箱:"+data.email;
+			var obj =document.getElementById("result");
+			if(obj.textContent){
+				obj.textContent=html;
+			}else{
+				obj.innerText=html;
+			}
+		}
+
+		function showAll(){
+			var html;
+			for(var i=0;i<localStorage.length;i++){
+				var data = JSON.parse(localStorage.getItem(localStorage.key(i)));
+				console.log(data);
+				html +="姓名:"+data.name+" "
+					+"联系电话:"+data.tel+" "
+					+"联系邮箱:"+data.email+"<br/>";
+			}
+			var obj = document.getElementById("result");
+			obj.innerHTML=html;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		姓名:<input id="name" type="text" name="name"><br/>
+		联系电话:<input id="tel" type="text" name="tel"><br/>
+		联系邮箱:<input id="email" type="text" name="email"><br/>
+		<input type="button" value="保存" onclick="storage()">
+	</form>
+	<hr/>
+	姓名<input id="s_name" type="text" name="s_name">
+	<input type="button" value="检索" onclick="search()">
+	<input type="button" value="显示所有" onclick="showAll()">
+	<p id="result"></p>
+</body>
+</html>
