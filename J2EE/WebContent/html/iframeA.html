@@ -1,0 +1,36 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>iframeA</title>
+        <style type="text/css">
+                body{
+                        width: 800px;
+                        height: 400px;
+                }
+        </style>
+        <script type="text/javascript">
+        //子窗口访问父窗口的某元素
+        function frameToPdiv(){
+                parent.document.getElementById("pox").style.color="#fff";
+                parent.document.getElementById("pox").style.backgroundColor="#f0a0f0"
+        }
+        //子窗口访问父窗口方法
+        function frameToPfun(){
+                parent.testP();
+        }
+        //用于测试iframeB访问的方法
+        function testBA(){
+                alert("用于测试iframeB访问的方法")
+        }
+</script>
+</head>
+        <body>
+        <div id="ooxx">用来测试父窗体访问子窗体中的某元素</div>
+        <p id="divooxx">用来测试子窗口B访问窗体A的某元素</p>
+        <p>1.子窗口iframeA访问父窗口的某元素</p>
+        <input type="button" onclick="frameToPdiv()" value="子窗口访问父窗口的某元素" />
+        <input type="button" onclick="frameToPfun()" value="子窗口访问父窗口的某方法" />
+</body>
+</html>
+
+

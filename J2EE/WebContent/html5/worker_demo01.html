@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>一段很耗时的JS在非worker机制下运行会影响页面的正常行为</title>
+	<script type="text/javascript">
+		function caculte(){
+			var num = parseInt(document.getElementById("num").value,10);
+			var result=0;
+			for (var i = 0; i < num; i++) {
+				result +=i;
+			};
+			document.getElementById("result").value=result;
+		}
+	</script>
+</head>
+<body>
+	请输入一个数字：<input id="num" type="number" name="num"><br>
+	<input  type="button"  value="求和" onclick="caculte()"><br>
+	<input type="text"  placeholder="请在点击求和后输入">
+	<p>当填入的值过大的时候页面会死</p>
+	<p id="result"></p>
+</body>
+</html>

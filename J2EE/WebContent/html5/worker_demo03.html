@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>与后台线程交互的例子</title>
+	<script type="text/javascript">
+	function caculte(){
+		//生成随机化
+		var len = document.getElementById("num").value;
+		var arr = new Array(len);
+		var data="";
+		for(var i=0;i<len;i++){
+			arr[i] = parseInt(Math.random() * 1000);
+			if(i!=0){
+				data +=";"
+			}
+			data +=arr[i];
+		}
+
+		//利用后台线程排序
+		var work = new Worker("Worker_demo03.js");
+		work.postMessage(data);
+
+		//处理排序结果
+		work.onmessage=function(event){
+			if(event.data !=""){
+				var arr = event.data.split(";");
+				var obj = document.createDocumentFragment();
+				for(var i=0;i<arr.length;i++){
+					var ele=document.createElement("p");
+					ele.textContent=arr[i];
+					obj.appendChild(ele);
+				}
+				var res = document.getElementById("result");
+				res.appendChild(obj);
+			}
+		};
+	}
+	</script>
+</head>
+<body>
+	<div>
+		<input id="num" type="number" name="num"><br>
+		<input type="button" value="生成随机数返回3的倍数" onclick="caculte()">
+	</div>
+	<div id="result"></div>
+</body>
+</html>

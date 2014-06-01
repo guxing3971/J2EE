@@ -1,0 +1,42 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>iframeB</title>
+                <style type="text/css">
+                body{
+                        width: 800px;
+                        height: 400px;
+                }
+        </style>
+        <SCRIPT TYPE="text/javascript">
+                        //子窗体B访问子窗体A的某元素
+                         function frameTframeDiv(){
+                        //parent.document.getElementById("frameA").contentWindow.document.getElementById("divooxx").style.color="#a0c0f0";
+                        //parent.document.getElementById("frameA").contentWindow.document.getElementById("divooxx").style.backgroundColor="#000"
+                        var _bframe=parent.getIframe("frameA");//子窗体访问父窗体方法
+                        _bframe.getElementById("divooxx").style.color="#a0c0f0";
+                        _bframe.getElementById("divooxx").style.backgroundColor="#000";
+                }
+        //子窗体B访问子窗体A的某方法
+        function frameTframeFun(){
+                        window.parent.frames["frameA"].testBA();
+        }
+                function getsFun(){
+                alert("父窗体访问Bframe子窗体的方法")
+        }
+        //getFun()
+        </SCRIPT>
+</head>
+<body>
+        <p>二:测试子窗体间相互访问某方法或元素</p>
+        <input type="button" value="子窗体B访问子窗体A的某元素" onclick="frameTframeDiv()" />
+        <input type="button" value="子窗体B访问子窗体A的某方法" onclick="frameTframeFun()" />
+</body>
+</html>
+
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+
+</script>

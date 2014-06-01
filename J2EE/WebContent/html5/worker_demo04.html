@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试线程嵌套</title>
+	<script type="text/javascript">
+	function caculte(){
+		var work = new Worker("Worker_demo04.js");
+		work.postMessage("");
+		work.onmessage=function(event){
+			if(event.data !=""){
+				var arr = event.data.split(";");
+				var obj = document.createDocumentFragment();
+				for(var i=0;i<arr.length;i++){
+					var e = document.createElement("p");
+					e.textContent=arr[i];
+					obj.appendChild(e);
+				}
+				document.body.appendChild(obj);
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<input type="button" value="生成随机数并返回能被3整除的" onclick="caculte()">
+</body>
+</html>

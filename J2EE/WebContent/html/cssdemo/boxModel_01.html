@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试boxModel</title>
+	<link rel="stylesheet" type="text/css" href="/know.css">
+</head>
+<body>
+<div id="know">
+<pre>
+在CSS中，使用display属性来定义盒的类型。
+总体上来说,CSS中的盒分为block类型和inline类型：
+·block
+	block元素的特点是：
+　　总是在新行上开始；
+　　高度，行高以及顶和底边距都可控制；
+　　宽度缺省是它的容器的100%，除非设定一个宽度
+	div, p, h1, form, ul 和 li是块元素的例子。
+·inline
+	inline元素的特点是： 
+　　和其他元素都在一行上；
+　　高，行高及顶和底边距不可改变；
+　　宽度就是它的文字或图片的宽度，不可改变。
+　　span, a, label, input, img, strong 和em是inline元素的例子。
+·inline-block
+	将对象呈递为内联对象，但是对象的内容作为块对象呈递。
+	旁边的内联对象会被呈递在同一行内，允许空格。
+　　inline-block的元素特点：
+　　将对象呈递为内联对象，但是对象的内容作为块对象呈递。
+	旁边的内联对象会被呈递在同一行内，允许空格。
+	准确地说，应用此特性的元素呈现为内联对象，周围元素保持在同一行，
+	但可以设置宽度和高度地块元素的属性
+
+</pre>
+</div>
+	<div id="block"> 
+		<div>div</div>
+		<p>p</p>
+		<h1>h1</h1>
+		<form>form</form>
+		<ul>ul</ul>
+		<li>li</li>
+	</div>
+	<div id="inline">
+		<span>span</span>
+		<a href="">a</a>
+		input:<input>
+		img<img src="">
+	</div>
+	<div id="inline-block">
+		<div style="display:inline-block">
+			div
+		</div>
+		<p  style="display:inline-block">p</p>
+		<h1  style="display:inline-block">h1</h1>
+		<form  style="display:inline-block"> form</form>
+		<ul  style="display:inline-block">ul</ul>
+		<li  style="display:inline-block">li</li>
+	</div>
+</body>
+</html>

@@ -4,36 +4,69 @@
 	<meta charset="utf-8">
 	<title>测试HTML5中的本地数据库</title>
 	<script type="text/javascript">
-		function initdb(){
+		function insert(){
+			var db = openDatabase("mydb",'1.0',"my db test",1 * 1024 * 1024);
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			db.transaction(function(tx){
+				tx.executeSql("insert into user values(?,?)",
+					[name,email],
+					function(tx,rs){
+						console.log("录入成功");
+					},
+					function(tx,error){
+						console.log(error.source + "::" + error.message);
+						console.log("录入失败");
+					}
+					)
+			});
+		}
+
+		function selectall(){
+			var db = openDatabase("mydb",'1.0',"my db test",1 * 1024 * 1024);
+			db.transaction(function(tx){
+				tx.executeSql("select * from user",
+					[],
+					function(tx,rs){
+						for(var i=0;i<rs.rows.length;i++){
+							row =rs.rows.item(i);
+							var res = document.createElement("p");
+							res.textContent=row.name+"&nbsp"+row.email;
+							var obj =document.getElementById("result");
+							obj.appendChild(res);
+						}
+					});
+			});
+		}
+		function deleteall(){
+			var db = openDatabase("mydb",'1.0',"my db test",1 * 1024 * 1024);
+			db.transaction(function(tx){
+				tx.executeSql("delete from user",
+					[],
+					function(tx,rs){
+						console.log(rs);
+					});
+			});
+		}
+		window.onload=function(){
 			//初始化本地数据，如果不存在则创建一个数据库
 			var db = openDatabase("mydb",'1.0',"my db test",1 * 1024 * 1024);
 			//创建一张表
 			db.transaction(function(tx){
-				tx.executeSql("CREATE TABLE IF NOT EXISITS msgData(name text,message Text)",
-						function(tx,rs){
-							console.log("创建表成功");
-						}
-						function(tx,error){
-							console.log("创建表失败");
-						}
-					);
+				tx.executeSql("CREATE TABLE IF NOT EXISTS user(name text,email Text)");
 			});
-
-		}
-		function insert(){
-			var db = openDatabase("mydb",'1.0',"my db test",1 * 1024 * 1024);
-			var name = document.getElementById("name");
-			var name = document.getElementById("name");
-			
-
 		}
 	</script>
 </head>
 <body>
 	<form>
 		姓名:<input id="name" type="text" name="name"><br/>
-		备注:<input id="message" type="text" name="message"><br/>
+		备注:<input id="email" type="text" name="email"><br/>
 		<input type="button" value="保存" onclick="insert()">
+		<input type="button" value="查询" onclick="selectall()">
+		<input type="button" value="清楚" onclick="deleteall()">
 	</form>
+	<hr/>
+	<div id="result"></div>
 </body>
 </html>

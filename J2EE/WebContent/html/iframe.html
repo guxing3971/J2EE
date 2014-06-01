@@ -1,0 +1,30 @@
+<div class="line">====================注意:测试从这里开始=========================</div>
+<p id="pox">用来测试子窗体iframeA访问父窗体的某元素</p>
+<div class="line">====================iframe分割线=========================</div>
+<iframe src="iframeA.html" mce_src="iframeA.html" width="400px" frameborder="1" id="frameA" name="frameA"></iframe>
+<iframe src="iframeB.html" mce_src="iframeB.html" name="iframeB" width="400px" frameborder="1" id="frameB"></iframe>
+<div class="line">====================iframe分割线=========================</div>
+<p>先来演示:父窗体访问子窗体中的某方法或元素</p>
+<p>总结:父窗体访问子窗体的方法跟元素采用不同的方式</p>
+<input type="button" onclick="frameDiv()" value="父窗体访问子窗体中的某元素" />
+<input type="button" onclick="frameFun()" value="父窗体访问子窗体中的某方法" />
+<script type="text/javascript">
+        //子窗口访问父窗口方法
+        function testP(){
+                alert("子窗口A访问父窗口的方法")
+        }
+        //取得iframe的元素
+        function getIframe(id){
+                return document.getElementById(id).contentWindow.document;
+        }
+        //父窗口访问子窗口元素
+        function frameDiv(){
+                getIframe("frameA").getElementById("ooxx").style.backgroundColor="#f00"
+                //window.frames["iframeA"].getElementById("ooxx").style.backgroundColor="#f00"  //不能通过这种形式访问某元素
+        }
+        //父窗口访问子窗口方法
+        function frameFun(){
+                //getIframe("frameB").getsFun();//不能通过这种形式访问子窗体某方法
+                window.frames["iframeB"].getsFun()
+        }
+</script>
