@@ -1,4 +1,5 @@
+.gitignore
 *.class
-
+emoteSystemsTempFiles/
 logs/
 J2EE/WebContent/WEB-INF/classes/
