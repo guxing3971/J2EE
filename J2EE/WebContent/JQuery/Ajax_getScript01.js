@@ -14,7 +14,7 @@ function insertDiv(){
 	document.documentElement.appendChild(div);
 }
 insert();
-=======
+
 //在加载该JS的页面输出一个div
 function insertDiv(){
 	var text ="这是引用的JS创建的DIV";

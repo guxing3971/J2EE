@@ -215,7 +215,7 @@ for(var p in obj){
  */
  function restrict(o,p){
  	for(prop in o){
- 		if(!(prop in p) delete o[prop]);
+ 		if(!(prop in p)) delete o[prop];
  	}
  	return o;
  }
