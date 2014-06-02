@@ -1,3 +1,0 @@
-INDEX VERSION 1.126
-/home/neptune/workspace/J2EE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4240597118.index
-/J2EE/src
