@@ -1,0 +1,59 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试boxModel</title>
+	<link rel="stylesheet" type="text/css" href="/know.css">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#inline{
+			background: #FFEBCD;
+		}
+		#block{
+			background: #FFE7BA;
+		}
+		#inline-block{
+			background: #FFEC8B;
+		}
+		.inline-block{
+			/*为内联盒子模型元素指定高度宽度和背景*/
+			display: inline-block;
+			vertical-align: top;
+			background: #D8BFD8;
+			width: 80px;
+			height: 30px;
+		}
+		div,p,h1,form,ul,li,span, a, label, input, img, strong{
+			border: 1px solid;
+		}
+		h1{
+			font-size: 20px;
+		}
+	</style>
+</head>
+	<div id="block"> 
+		<div>div</div>
+		<p>p</p>
+		<h1>h1</h1>
+		<form>form</form>
+		<ul>ul</ul>
+		<li>li</li>
+	</div>
+	<div id="inline">
+		<span>span</span>
+		<a href="">a</a>
+		input:<input>
+		img<img src="">
+	</div>
+	<div id="inline-block">
+		<div class="inline-block">div</div>
+		<p  class="inline-block">p</p>
+		<h1  class="inline-block">h1</h1>
+		<form  class="inline-block"> form</form>
+		<ul  class="inline-block">ul</ul>
+		<li  class="inline-block">li</li>
+	</div>
+</body>
+</html>
