@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>css position test</title>
+	<link rel="stylesheet" type="text/css" href="../../know.css">
+	<style type="">
+		#menu_left{
+			position: fixed;
+			width: 90px;
+			height: 140px;
+			background: #FF9224;
+			left: 0px;
+			top:30%;
+		}
+		#menu_right{
+			position: fixed;
+			width: 90px;
+			height: 140px;
+			background: #FF9224;
+			right: 0px;
+			top:30%;
+		}
+		#know{
+			height: 4000px;
+		}
+	</style>
+</head>
+<body>
+	<div id="know">
+<pre>
+	fixed是特殊的absolute，即fixed总是以body为定位对象的，按照浏览器的窗口进行定位。
+</pre>
+	</div>
+	<div id="menu_left">
+		menu_left
+	</div>
+	<div id="menu_right">
+		menu_right
+	</div>
+</body>
+</html>
