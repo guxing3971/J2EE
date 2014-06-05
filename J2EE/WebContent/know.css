@@ -1,9 +1,10 @@
 #know{
 	margin: auto;
-	padding: 0pox;
+	padding: 0px;
 	text-indent: 4px;
+	font-weight: 700;
 	font-size: 14px;
-	font-family: '微软雅黑';
+	font-family: 'sans-serif';
 	border: 1px solid;
 	border-radius:8px;
 	width: 85%;

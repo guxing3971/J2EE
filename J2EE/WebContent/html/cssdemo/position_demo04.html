@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS position test</title>
+	<link rel="stylesheet" href="../../know.css">
+	<style>
+		#test{
+			margin: 3px auto;
+			padding: 2px;
+			background: #FFFFE0;
+			width: 800px;
+			height: 200px;
+			border: 1px solid #FFF68F;
+			border-radius: 10px;
+			color: #0000CD;
+			font-size: 18px;
+		}
+		#relative{
+			position: relative;
+			top: 30px;
+			left: 50px;
+			width: 200px;
+			height:120px;
+			background: #636363;
+			color: #EE30A7;
+			font-weight: 800;
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+	<div id="know">
+<pre>
+	relative属性相对比较简单，我们要搞清它是相对哪个对象来进行偏移的。答案是它本身的位置
+	如果设定 position:relative，就可以使用 top,bottom,left 和 right 来相对于元素在文档中
+	应该出现的位置来移动这个元素。【意思是元素实际上依然占据文档中的原有位置，只是视觉上
+	相对于它在文档中的原有位置移动了】
+
+	如果我们给 div-1 设置 relative 定位，那么 div-1 内的所有元素都会相对 div-1 定位。
+	如果给 div-1a 设置 absolute 定位，就可以把 div-1a 移动到 div-1 的右上方。
+</pre>
+	</div>
+	<div id="test">
+		test-div
+		<div id="relative">
+			<pre>
+div:
+position:relative;
+top:30px;
+left:120px;
+			</pre>
+			
+
+		</div>
+	</div>
+</body>
+</html>
