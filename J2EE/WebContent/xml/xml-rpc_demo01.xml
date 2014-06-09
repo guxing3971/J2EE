@@ -1,0 +1,53 @@
+<!--
+	xml-rpc远程过程调用
+
+	struct  topicExchange.getChannels();	//返回一个现有频道的列表
+	struct  topicExchaneg.ping(string topicName,struct details)//新增一条记录
+	struct  topicExchange.getChannelInfo(string topicName)//取得某条记录的详细信息
+-->
+<!--为了能在浏览器中展开，添加了root根元素-->
+<root>
+<!--不需要参数的调用-->
+<methodCall>
+	<methodName>
+		topicExchange.getChannels
+	</methodName>	
+</methodCall>
+
+<!--调用带参数的过程-->
+<methodCall>
+	<methodName>
+		topicExchange.getChannelInfo
+	</methodName>
+	<params>
+		<param>
+			<value><string>books</string></value>			
+		</param>
+	</params>
+</methodCall>
+
+<!--使用结构体-->
+<methodCall>
+	<methodName>
+		topicExchaneg.ping
+	</methodName>
+	<params>
+		<param>
+			<value><string>books</string></value>			
+		</param>
+		<param>
+			<struct>
+				<member>
+					<name>books</name>
+					<value><string>xml-rpc pro</string></value>
+				</member>
+				<member>
+					<name></name>
+					<value><dateTime class="iso8601">19980717T14:08:55</dateTime></value>
+				</member>
+			</struct>
+		</param>
+	</params>
+</methodCall>
+
+</root>

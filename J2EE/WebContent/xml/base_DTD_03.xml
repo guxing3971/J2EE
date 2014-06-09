@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE emails[
+	<!ELEMENT emails (emial)+ >
+	<!ELEMENT email (id,name,address)>
+	<!ATTLIST email type (163.com|qq.com|gmail.com) "qq.com">
+	<!ELEMENT id (#PCDATA)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT address (#PCDATA)>
+]>
+
+<emails>
+	<email type="163.com">
+		<id>1</id>
+		<name>9090707</name>
+		<address>青海</address>
+	</email>
+	<email type="qq.com">
+		<id>1</id>
+		<name>9090707</name>
+		<address>青海</address>
+	</email>
+	<email type="gmail.com">
+		<id>1</id>
+		<name>9090707</name>
+		<address>青海</address>
+	</email>
+</emails>

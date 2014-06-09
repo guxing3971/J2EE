@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DTD部分-->
+<!DOCTYPE name[
+	<!ELEMENT name (frist,middle,last)>
+	<!ELEMENT first (#PCDATA)>
+	<!ELEMENT middle (#PCDATA)>
+	<!ELEMENT last (#PCDATA)>
+]>
+
+<name>
+	<first>first</first>
+	<shit>midde1l</shit>
+	<last>last</last>
+</name>

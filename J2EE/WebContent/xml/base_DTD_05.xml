@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "http://localhost/xml/base_DTD_04.dtd">
+<note>
+<to>George</to>
+<from>
+	<p>ohn</p>
+</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note>
