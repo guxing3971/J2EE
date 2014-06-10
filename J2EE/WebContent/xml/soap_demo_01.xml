@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<totals>
+	<dept id="2332">
+		<gross>11111.23</gross>
+		<net>1234.23</net>
+	</dept>
+	<dept id="1234">
+		<gross>1234.23</gross>
+		<net>11111.23</net>
+	</dept>
+</totals>

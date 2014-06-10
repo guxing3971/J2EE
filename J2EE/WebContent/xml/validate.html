@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>校验xml</title>
+	<script type="text/javascript">
+		function readFile(){
+			var reader;
+			if(typeof FileReader == 'undefined'){
+				alert("浏览器不支持FileReader");
+				return false;
+			}else{
+				reader = new FileReader();
+			}
+
+			var files = document.getElementById("file").files;
+			for(var i=0;i<files.length;i++){
+				reader.readAsBinaryString(files[i]);
+				reader.onload=function(){
+					console.log(this.result);
+					validate(this.result);
+				}
+			}
+		}
+		function validate(txt){
+			// code for IE  
+		    if (window.ActiveXObject){  
+		      var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");  
+		      xmlDoc.async="false";  
+		      xmlDoc.loadXML(txt);  
+		      
+		      if(xmlDoc.parseError.errorCode!=0){  
+				txt="Error Code: " + xmlDoc.parseError.errorCode + "\n";  
+				txt=txt+"Error Reason: " + xmlDoc.parseError.reason;  
+				txt=txt+"Error Line: " + xmlDoc.parseError.line;  
+				alert(txt);  
+				return false;  
+		      }else{  
+		        alert("XML验证通过！");  
+		        return true;  
+		      }  
+		    }  
+		    // code for Mozilla, Firefox, Opera, etc.  
+		    else if (document.implementation.createDocument){  
+		        var parser=new DOMParser();  
+		        var xmlDoc=parser.parseFromString(txt,"text/xml");  
+		      
+		        if (xmlDoc.documentElement.nodeName=="parsererror" || xmlDoc.documentElement.firstChild.nodeName=="parsererror"){  
+		            alert("警告XML验证错误!");  
+		            return false;  
+		        }else{  
+		            alert("XML验证通过！");  
+		            return true;  
+		        }  
+		    }  
+		}
+	</script>
+</head>
+<body>
+	choose file:<input type="file" id="file" multiple size="80"><br>
+	<input type="button" value="校验文件" onclick="readFile()">
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--指定SOAP头-->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<nep:price xmlns:nep="http://www.neptune.com/nep"
+			soap:role="http://www.w3.org/2003/05/soap-envelope/role/next"
+			soap:mustUnderstand="true">
+			99.09
+		</nep:price>
+	</soap:Header>
+	<soap:Body>
+		<!-- .. -->
+	</soap:Body>
+</soap:Enveloe>
