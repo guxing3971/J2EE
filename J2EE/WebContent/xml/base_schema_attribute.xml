@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<man xmlns="simple_attribute_test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="simple_attribute_test base_schema_attribute.xsd">
+		<name name="attribute">测试</name>
+		<age></age>
+		<bortdate>2014-10-10</bortdate>
+		<country></country>
+</man>

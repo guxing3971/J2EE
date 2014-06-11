@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="simple_attribute_test" targetNamespace="simple_attribute_test" elementFormDefault="qualified">
+	<element name="man">
+		<complexType>
+			<sequence>
+				<element name="name">
+					<complexType>
+						<!-- 为name元素指定属性type -->
+						<simpleContent>
+							<extension base="string">
+								<!-- 定义ID属性 -->
+								<attribute name="id" type="anyURI"/>
+								<!-- 定义必需的name属性 -->
+								<attribute name="name" type="string" use="required"/>
+							</extension>
+						</simpleContent>
+					</complexType>
+				</element>
+				<element name="age" type="integer" default="16"/>
+				<element name="bortdate" type="date"/>
+				<element name="country" type="string" fixed="china"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

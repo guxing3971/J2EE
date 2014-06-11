@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="simpleElement_test"
+	xmlns:tns="simpleElement_test"
+	elementFormDefault="qualified">
+	
+	<!-- 定义文档的根节点 -->
+	<element name="man">
+		<complexType>
+			<sequence>
+				<!-- 使用type属性指定标签的内容必需属于该类型 -->
+				<element name="name" type="string"></element>
+				<!-- 为年龄指定默认值 -->
+				<element name="age" type="integer" default="16"></element>
+				<element name="bortdate" type="date"></element>
+				<!-- 为元素指定固定值 -->
+				<element name="country" type="string" fixed="china"></element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<man xmlns="simpleElement_test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="simpleElement_test base_schema_simpleEleemnt.xsd">
+	<name>test</name>
+	<!-- 测试默认值 -->
+	<age></age>
+	<bortdate>2014-10-14</bortdate>
+	<!-- country指定了固定值但是读取时候为空 -->
+	<country></country>
+</man>
