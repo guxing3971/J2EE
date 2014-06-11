@@ -15,7 +15,6 @@ public class HelloForm extends ActionForm{
 	@Override
 	public ActionErrors validate(ActionMapping mapping,
 			HttpServletRequest request) {
-		// TODO Auto-generated method stub
 		return super.validate(mapping, request);
 	}
 

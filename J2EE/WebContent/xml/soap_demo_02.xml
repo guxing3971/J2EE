@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <SOAP:Envelope xmlns:SOAP="http://www.w3.org/2003/05/soap-envelope">
 	<SOAP:Header></SOAP:Header>
 	<SOAP:Body>
-		<totals xmlns:="xxx">
+		<totals>
 			<dept id="2332">
 				<gross>11111.23</gross>
 				<net>1234.23</net>
@@ -13,4 +14,4 @@
 			</dept>
 		</totals>
 	</SOAP:Body>
-<SOAP:Envelope>
+</SOAP:Envelope>

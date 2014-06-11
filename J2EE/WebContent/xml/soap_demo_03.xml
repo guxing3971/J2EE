@@ -12,4 +12,4 @@
 	<soap:Body>
 		<!-- .. -->
 	</soap:Body>
-</soap:Enveloe>
+</soap:Envelope>

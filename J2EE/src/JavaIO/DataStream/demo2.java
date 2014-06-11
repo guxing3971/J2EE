@@ -45,7 +45,6 @@ public class demo2 {
 		try {
 			dis.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

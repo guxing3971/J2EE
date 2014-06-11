@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<book xmlns="book.shop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="book.shop base_schema_03.xsd">
+	<title>Struts2</title>
+	<author>孙鑫</author>
+</book>

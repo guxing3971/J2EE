@@ -76,7 +76,6 @@ public class InputKey {
 			try {
 				date  = sdf.parse(str);
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}else{

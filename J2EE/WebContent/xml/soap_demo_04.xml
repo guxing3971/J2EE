@@ -17,4 +17,4 @@
 			</nep:price>
 		</nep:prices>				
 	</soap:Body>
-</soap:Enveloe>
+</soap:Envelope>

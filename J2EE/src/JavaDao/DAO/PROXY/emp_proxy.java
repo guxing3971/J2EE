@@ -30,7 +30,6 @@ public class emp_proxy implements emp_dao{
 
 	@Override
 	public emp selectByNo(int empno) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
