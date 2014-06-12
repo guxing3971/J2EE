@@ -6,7 +6,7 @@
 			<sequence>
 				<element name="name">
 					<complexType>
-						<!-- 为name元素指定属性type -->
+						<!-- 为name元素指定属性 -->
 						<simpleContent>
 							<extension base="string">
 								<!-- 定义ID属性 -->

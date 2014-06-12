@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="baseSchemaComplex_01" targetNamespace="baseSchemaComplex_01" elementFormDefault="qualified">
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="man">
+					<complexType>
+						<sequence>
+							<element name="name"/>
+							<element name="age"/>
+							<element name="borth"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

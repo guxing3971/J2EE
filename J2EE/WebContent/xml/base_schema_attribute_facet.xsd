@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="baseSchemaAttributeFacet" targetNamespace="baseSchemaAttributeFacet" elementFormDefault="qualified">
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="banrch">
+					<complexType>
+						<sequence>
+							<element name="left" maxOccurs="unbounded">
+								<complexType>
+									<simpleContent>
+										<extension base="string">
+											<!-- 为left元素指定size属性，类型为string 长度必需是3 -->
+											<attribute name="size">
+												<simpleType>
+													<restriction base="string">
+														<length value="3"/>
+													</restriction>
+												</simpleType>
+											</attribute>
+											<!-- 为left元素指定color属性，类型为string 长度必需是3 -->
+											<attribute name="color">
+												<simpleType>
+													<restriction base="string">
+														<length value="3"/>
+													</restriction>
+												</simpleType>
+											</attribute>
+											<!-- 为left指定color属性，类型为整形范围为0~12 -->
+											<attribute name="age">
+												<simpleType>
+													<restriction base="integer">
+														<minInclusive value="0"/>
+														<maxInclusive value="12"/>
+													</restriction>
+												</simpleType>
+											</attribute>
+										</extension>
+									</simpleContent>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<!-- 定义name元素，并为name的pcdata指定长度3~10个字符 -->
+				<element name="name" maxOccurs="unbounded">
+					<simpleType>
+						<restriction base="string">
+							<minLength value="3"/>
+							<maxLength value="10"/>
+						</restriction>
+					</simpleType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

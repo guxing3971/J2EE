@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 复合元素 -->
+<root>
+	<man>
+		<name></name>
+		<age></age>
+		<borth></borth>
+	</man>
+</root>

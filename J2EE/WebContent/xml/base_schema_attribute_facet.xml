@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root
+	xmlns="baseSchemaAttributeFacet"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="baseSchemaAttributeFacet base_schema_attribute_facet.xsd">
+	<banrch>
+		<left size="111" color="red" age="0">sss</left>
+		<left size="111" color="red" age="3">sss</left>
+		<left size="111" color="red" age="11">sss</left>
+		<!-- 超出范围会报错 -->
+		<!--  <left size="111" color="red" age="15">sss</left>
+		-->
+	</banrch>
+	<!-- 为name元素的pcdata指定数据长度 -->
+	<name>apple</name>
+</root>
