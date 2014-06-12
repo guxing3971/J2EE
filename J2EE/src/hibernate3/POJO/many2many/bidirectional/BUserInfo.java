@@ -8,7 +8,7 @@ public class BUserInfo {
 	
 	private String userName;
 	
-	private Set<BRuleInfo> ruleSet = new HashSet<>();
+	private Set<BRuleInfo> ruleSet = new HashSet<BRuleInfo>();
 
 	public Integer getUserId() {
 		return userId;
