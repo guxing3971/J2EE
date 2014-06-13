@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root
+	xmlns="baseSchemeIndicatorAny01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="baseSchemeIndicatorAny01 base_schema_indicator_any01.xsd
+		 baseSchemeIndicatorAny02 base_schema_indicator_any02.xsd">
+	<!-- 没有扩展的person元素 -->	 
+	<person>
+		<name>test1</name>
+		<age>10</age>
+	</person>
+	
+	
+	<!-- 被扩展的person元素 -->
+	<person>
+		<name>test</name>
+		<age>11</age>
+		<tns:child xmlns:tns="baseSchemeIndicatorAny02">
+			<tns:childname>name</tns:childname>
+		</tns:child>
+	</person>
+	
+
+</root>

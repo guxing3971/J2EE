@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="baseSchemeIndicatorAny01"
+	xmlns:tns="baseSchemeIndicatorAny01"
+	elementFormDefault="qualified">
+	
+	<!-- 定义一个person元素，并使用any元素使其可以扩展 -->
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="person" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="name" type="string"></element>
+							<element name="age" type="integer"></element>
+							<!-- 使用any元素表示此处还可以扩展 -->
+							<any minOccurs="0"></any>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

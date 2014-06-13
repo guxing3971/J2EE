@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="baseSchemaAnyAttribute"
+	xmlns:tns="baseSchemaAnyAttribute"
+	elementFormDefault="qualified">
+	
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="person" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="name" type="string"></element>
+							<element name="age" type="integer"></element>
+						</sequence>
+						<!-- 通过anyAttribute指定可以为person元素添加属性 -->
+						<anyAttribute/>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

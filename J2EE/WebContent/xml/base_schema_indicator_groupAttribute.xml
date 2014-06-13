@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root
+	xmlns="baseSchemaIndicatorGroupAttribute"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="baseSchemaIndicatorGroupAttribute base_schema_indicator_groupAttribute.xsd">
+
+	<man>
+		<name id="name" class="name">ss</name>
+		<sex id="name" class="name">男</sex>
+		<age  id="name" class="name">120</age>
+	</man>
+</root>

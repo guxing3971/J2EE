@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="baseSchemaAnyAttribute01"
+	xmlns:tns="baseSchemaAnyAttribute01"
+	elementFormDefault="qualified">
+	<attribute name="id">
+		<simpleType>
+			<restriction base="string">
+				<pattern value="男|女"></pattern>
+			</restriction>
+		</simpleType>
+	</attribute>
+</schema>

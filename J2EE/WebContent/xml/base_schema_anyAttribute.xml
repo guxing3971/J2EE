@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- 
+	注意 xmlns:ni="baseSchemaAnyAttribute01" 这句引入
+ -->
+<root
+	xmlns="baseSchemaAnyAttribute"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ni="baseSchemaAnyAttribute01"
+	xsi:schemaLocation="baseSchemaAnyAttribute base_schema_anyAttribute.xsd
+	 baseSchemaAnyAttribute01 base_schema_anyAttribute02.xsd">
+
+	<person>
+		<name>test</name>
+		<age>100</age>
+	</person>
+	
+	<person ni:id="男">
+		<name>test</name>
+		<age>100</age>	
+	</person>
+	
+	<person ni:id="女">
+		<name>test</name>
+		<age>100</age>	
+	</person>
+	
+	<!-- 属性不符合会报错 -->
+	<!-- 
+	<person ni:id="人妖">
+		<name>test</name>
+		<age>100</age>	
+	</person>
+	 -->
+</root>

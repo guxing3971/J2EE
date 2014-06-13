@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="baseSchemaIndicatorGroupAttribute" targetNamespace="baseSchemaIndicatorGroupAttribute" elementFormDefault="qualified">
+	<!-- 所谓的group attribute就是将属性抽象出来 产生公用体 -->
+	<attributeGroup name="attribute">
+		<attribute name="id" type="string"/>
+		<attribute name="class" type="string"/>
+	</attributeGroup>
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="man">
+					<complexType>
+						<sequence>
+							<element name="name">
+								<complexType>
+									<simpleContent>
+										<extension base="string">
+											<attributeGroup ref="tns:attribute"/>
+										</extension>
+									</simpleContent>
+								</complexType>
+							</element>
+							<element name="sex">
+								<complexType>
+									<simpleContent>
+										<extension base="string">
+											<attributeGroup ref="tns:attribute"/>
+										</extension>
+									</simpleContent>
+								</complexType>
+							</element>
+							<element name="age">
+								<complexType>
+									<simpleContent>
+										<extension base="integer">
+											<attributeGroup ref="tns:attribute"/>
+										</extension>
+									</simpleContent>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

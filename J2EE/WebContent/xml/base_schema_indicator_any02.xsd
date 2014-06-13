@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="baseSchemeIndicatorAny02"
+	xmlns:tns="baseSchemeIndicatorAny02"
+	elementFormDefault="qualified">
+	<!-- 定义一个child元素 -->
+	<element name="child">
+		<complexType>
+			<sequence>
+				<element name="childname" type="string" maxOccurs="1"></element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
