@@ -1,5 +1,6 @@
 package webServices.base.serviceImpl;
 
+
 import webServices.base.service.HelloWS;
 
 public class HelloWSImpl implements HelloWS {
@@ -13,5 +14,6 @@ public class HelloWSImpl implements HelloWS {
 		System.out.println(str);
 		return str;
 	}
+
 
 }

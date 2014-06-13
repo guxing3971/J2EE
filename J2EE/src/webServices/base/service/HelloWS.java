@@ -14,4 +14,5 @@ public interface HelloWS {
 	//定义接口方法
 	@WebMethod
 	public String sayHello(String name);
+	
 }

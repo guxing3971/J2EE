@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 
+	xmlns:ns1="http://service.base.webServices/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="HelloWS" 
+	targetNamespace="http://service.base.webServices/">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://service.base.webServices/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified"
+			targetNamespace="http://service.base.webServices/" version="1.0">
+			<!-- 此处定义一些元素，方便下面进行引用 -->
+			<xs:element name="sayHello" type="tns:sayHello" />
+			<xs:element name="sayHelloResponse" type="tns:sayHelloResponse" />
+			<xs:complexType name="sayHello">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="arg0" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="sayHelloResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<!-- 此处一个服务端的方法对应俩个wsdl:message分别表示HTTP的request和response -->
+	<wsdl:message name="sayHelloResponse">
+		<wsdl:part element="ns1:sayHelloResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="sayHello">
+		<wsdl:part element="ns1:sayHello" name="parameters" />
+	</wsdl:message>
+	<!-- 对应服务端的提供的方法，及SEI -->
+	<wsdl:portType name="HelloWS">
+		<wsdl:operation name="sayHello">
+			<wsdl:input message="ns1:sayHello" name="sayHello" />
+			<wsdl:output message="ns1:sayHelloResponse" name="sayHelloResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>
