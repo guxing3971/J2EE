@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by () -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="baseSchemaIndicatorGroupname"
+	targetNamespace="baseSchemaIndicatorGroupname" elementFormDefault="qualified">
+	<!-- 所谓的GroupName可以理解是面向对象编程中的共性提取抽象父类的思想 -->
+	<!-- 利用groupname定义元素组，例如人 -->
+	<group name="people">
+		<sequence>
+			<element name="name" type="string" />
+			<element name="sex" type="string" />
+			<element name="age" type="integer" />
+		</sequence>
+	</group>
+	<element name="root">
+		<complexType>
+			<sequence>
+				<!-- 对之前定义的元素组进行引用 -->
+				<element name="man" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<group ref="tns:people" />
+							<element name="house"></element>
+							<element name="car"></element>
+							<element name="money"></element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

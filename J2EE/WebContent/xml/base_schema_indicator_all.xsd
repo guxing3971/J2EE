@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="baseSchemaIndicatorAll_test"
+	xmlns:tns="baseSchemaIndicatorAll_test"
+	elementFormDefault="qualified">
+	
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="man" maxOccurs="unbounded">
+					<complexType>
+						<!-- 使用all指示器定义俩个元素name和age，它们可以以任意顺序出现但只能出现一次 -->
+						<all>
+							<element name="name" type="string" />
+							<element name="age" type="integer"/>
+						</all>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

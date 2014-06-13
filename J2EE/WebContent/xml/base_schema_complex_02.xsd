@@ -3,18 +3,24 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="baseSchemaComplex_01" targetNamespace="baseSchemaComplex_01" elementFormDefault="qualified">
 	<!-- 定义一个复合类型 然后其他的引用该类型，还未测试成功 -->
 	<complexType name="peopless">
-		<simpleContent>
-			<extension base="decimal">
-				<attribute name="sizing" type="string"/>
-			</extension>
-		</simpleContent>
+		<sequence>
+			<element name="name"/>
+			<element name="sex" type="string"/>
+			<element name="age">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="120"/>
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
 	</complexType>
 	<element name="root">
 		<complexType>
 			<sequence>
 				<sequence>
-					<element name="man" type="peopless">
-					</element>
+					<element name="man" type="tns:peopless"/>
 					<element name="women"/>
 				</sequence>
 			</sequence>

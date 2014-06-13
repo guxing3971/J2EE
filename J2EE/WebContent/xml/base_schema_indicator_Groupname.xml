@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root
+	xmlns="baseSchemaIndicatorGroupname"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="baseSchemaIndicatorGroupname base_schema_indicator_Groupname.xsd">
+	<man>
+		<name>test</name>
+		<sex>男</sex>
+		<age>120</age>
+		<house>没房</house>
+		<car>没车</car>
+		<money>没钱</money>
+	</man>
+</root>

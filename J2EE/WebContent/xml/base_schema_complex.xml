@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 复合元素 -->
-<root>
+<root
+	xmlns="baseSchemaComplex_01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="baseSchemaComplex_01 base_schema_complex_01.xsd">
 	<man>
 		<name></name>
 		<age></age>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root
+	xmlns="baseSchemaIndicator_occurence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="baseSchemaIndicator_occurence base_schema_indicator_occurrence.xsd">
+	<mans>只能出现一次</mans>
+	<man>可以出现无数次</man>
+	<man>可以出现无数次</man>
+	<man>可以出现无数次</man>
+	<man>可以出现无数次</man>
+	<school>只能出现1次到10次之间</school>
+	<school>只能出现1次到10次之间</school>
+	<school>只能出现1次到10次之间</school>
+</root>

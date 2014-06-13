@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="baseSchemaIndicator_Sequnce"
+	xmlns:tns="baseSchemaIndicator_Sequnce"
+	elementFormDefault="qualified">
+	
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="man">
+					<complexType>
+						<!-- 使用sequence指示器指定的元素必需以指定的顺序出现 -->
+						<sequence>
+							<element name="name" type="string"></element>
+							<element name="age" type="integer"></element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

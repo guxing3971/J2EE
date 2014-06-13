@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root xmlns="baseSchemaIndicatorAll_test" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="baseSchemaIndicatorAll_test base_schema_indicator_all.xsd">
+	<man>
+		<age>11</age>
+		<name>test</name>
+	</man>
+	<man>
+		<name>test11</name>
+		<age>11</age>
+	</man>
+</root>

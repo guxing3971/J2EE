@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="baseSchemaIndicator_choice"
+	xmlns:tns="baseSchemaIndicator_choice"
+	elementFormDefault="qualified">
+	
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="man" maxOccurs="unbounded">
+					<complexType>
+						<choice>
+							<element name="vip" type="string"/>
+							<element name="mem" type="string"/>
+						</choice>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

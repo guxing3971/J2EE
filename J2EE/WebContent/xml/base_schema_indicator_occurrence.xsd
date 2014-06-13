@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="baseSchemaIndicator_occurence"
+	xmlns:tns="baseSchemaIndicator_occurence"
+	elementFormDefault="qualified">
+	
+	<!-- 使用occurrence指示器指定元素出现的次数 -->
+	
+	<element name="root">
+		<complexType>
+			<sequence>
+				<!-- 通过maxOccurs指示器指定该元素只能出现一次 -->
+				<element name="mans" maxOccurs="1"></element>
+				<!-- 通过maxOccurs指示器指定该元素出现次数不受限制 -->
+				<element name="man" maxOccurs="unbounded"></element>
+				<!-- 通过Occurrence指示器指定该元素只能出现0~10次 -->
+				<element name="school" minOccurs="1" maxOccurs="10"></element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

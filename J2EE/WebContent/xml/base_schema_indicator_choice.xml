@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root
+	xmlns="baseSchemaIndicator_choice"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="baseSchemaIndicator_choice base_schema_indicator_choice.xsd">
+	<man>
+		<mem>普通會員</mem>
+	</man>
+	<man>
+		<vip>超級會員</vip>
+	</man>
+</root>
