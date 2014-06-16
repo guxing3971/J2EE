@@ -60,10 +60,29 @@
 	</jsp-config>
 
 	<!-- spring -->
-	<!--  
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/conf/WebService.xml
+		</param-value>
+	</context-param>
+	
+	<!-- cxf -->
+	<servlet>
+		<servlet-name>CXFServlet</servlet-name>
+		<servlet-class> org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CXFServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!--
+		利用spring配置数据源
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
