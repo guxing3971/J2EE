@@ -20,4 +20,25 @@
 	<jaxws:endpoint id="datatype"
 		implementor="webServices.cxf.serv.impl.DataTypeWSImple"
 		address="http://localhost:1000/J2EE/services/datatype"/>
+	
+	
+	<!-- 通过spring配置cxf拦截器 -->
+	<jaxws:endpoint id="DataTypeWSImple" implementor="webServices.cxf.serv.impl.DataTypeWSImple" address="http://localhost:1000/J2EE/services/spring/datatype">
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
+			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
+		</jaxws:inInterceptors>
+	</jaxws:endpoint>
+	
+	<!-- 通过spring配置cxf自定义拦截器 -->
+	<jaxws:endpoint id="DataTypeWSImples" implementor="webServices.cxf.serv.impl.DataTypeWSImple" address="http://localhost:1000/J2EE/services/spring/interceptor/datatype">
+		<jaxws:inInterceptors>
+			<bean class="webServices.cxf.serv.InterceptorTest">
+				<!--  
+				<constructor-arg name="username" value="admin"/>
+				<constructor-arg name="password" value="admin"/>
+				-->
+			</bean>
+		</jaxws:inInterceptors>
+	</jaxws:endpoint>
 </beans>
