@@ -16,12 +16,12 @@ public class clientTest02 {
 		
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 		Client client = dcf.createClient(address);
-		HTTPConduit http = (HTTPConduit) client.getConduit();
-		HTTPClientPolicy httpClientPolicy = new HTTPClientPolicy();
-		httpClientPolicy.setConnectionTimeout(10000);
-		httpClientPolicy.setAllowChunking(false);
-		httpClientPolicy.setReceiveTimeout(60 * 1000 * 5);
-		http.setClient(httpClientPolicy);
+//		HTTPConduit http = (HTTPConduit) client.getConduit();
+//		HTTPClientPolicy httpClientPolicy = new HTTPClientPolicy();
+//		httpClientPolicy.setConnectionTimeout(10000);
+//		httpClientPolicy.setAllowChunking(false);
+//		httpClientPolicy.setReceiveTimeout(60 * 1000 * 5);
+//		http.setClient(httpClientPolicy);
 		
 		Object[] invoke = client.invoke("sayHello", null);
 		System.out.println(invoke[0].toString());
