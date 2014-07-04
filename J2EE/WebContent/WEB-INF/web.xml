@@ -1,96 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-	<display-name>J2EE</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
-
-
-	<!-- 打印Tomcat的classLoader结构 -->
-	<servlet>
-		<servlet-name>ClassLoader</servlet-name>
-		<servlet-class>JavaSec.classLoader.TomcatClassLoaderTest</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ClassLoader</servlet-name>
-		<url-pattern>/PrintclassLoader</url-pattern>
-	</servlet-mapping>
-	
-	<!-- strut1配置 -->
-	<servlet>
-		<servlet-name>action</servlet-name>
-		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
-		<init-param>
-			<param-name>config</param-name>
-			<param-value>
+	 xmlns="http://java.sun.com/xml/ns/javaee" 
+	 xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" 
+	 xmlns:web="http://java.sun.com/xml/ns/javaee" 
+	 
+	 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+	 id="WebApp_ID" version="3.0">
+  <display-name>J2EE</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>ClassLoader</servlet-name>
+    <servlet-class>JavaSec.classLoader.TomcatClassLoaderTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClassLoader</servlet-name>
+    <url-pattern>/PrintclassLoader</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>
 				/WEB-INF/conf/struts-config.xml
 			</param-value>
-		</init-param>
-		<load-on-startup>0</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>action</servlet-name>
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
-	<jsp-config>
-		<taglib>
-			<taglib-uri>strut1-bean</taglib-uri>
-			<taglib-location>/WEB-INF/tag/struts-bean.tld</taglib-location>
-		</taglib>
-		<taglib>
-			<taglib-uri>strut1-html</taglib-uri>
-			<taglib-location>/WEB-INF/tag/struts-html.tld</taglib-location>
-		</taglib>
-		<taglib>
-			<taglib-uri>strut1-logic</taglib-uri>
-			<taglib-location>/WEB-INF/tag/struts-logic.tld</taglib-location>
-		</taglib>
-		<taglib>
-			<taglib-uri>strut1-nested</taglib-uri>
-			<taglib-location>/WEB-INF/tag/struts-nested.tld</taglib-location>
-		</taglib>
-	</jsp-config>
-
-	<!-- spring -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>strut1-bean</taglib-uri>
+      <taglib-location>/WEB-INF/tag/struts-bean.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>strut1-html</taglib-uri>
+      <taglib-location>/WEB-INF/tag/struts-html.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>strut1-logic</taglib-uri>
+      <taglib-location>/WEB-INF/tag/struts-logic.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>strut1-nested</taglib-uri>
+      <taglib-location>/WEB-INF/tag/struts-nested.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
 			/WEB-INF/conf/WebService.xml
 		</param-value>
-	</context-param>
-	
-	<!-- cxf -->
-	<servlet>
-		<servlet-name>CXFServlet</servlet-name>
-		<servlet-class> org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>CXFServlet</servlet-name>
-		<url-pattern>/services/*</url-pattern>
-	</servlet-mapping>
-	
-	
-	<!--
-		利用spring配置数据源
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>
-			/WEB-INF/conf/springDatasource.xml
-		</param-value>
-	</context-param>
-	-->
+  </context-param>
+  <servlet>
+    <servlet-name>CXFServlet</servlet-name>
+    <servlet-class> org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CXFServlet</servlet-name>
+    <url-pattern>/services/*</url-pattern>
+  </servlet-mapping>
 </web-app>
-
-
-	
